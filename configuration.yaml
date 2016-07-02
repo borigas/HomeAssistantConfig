@@ -1,0 +1,184 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # C for Celcius, F for Fahrenheit
+  temperature_unit: F
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  server_port: 443
+
+# Track the sun
+#sun:
+
+# Prediction of weather
+sensor:
+   platform: yr
+
+# View all events in a logbook
+logbook:
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Discover some devices automatically
+discovery:
+
+# Enables support for tracking state changes over time.
+history:
+
+# Checks for available updates
+updater:
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /home/pi/python-openzwave/openzwave/config
+
+nest:
+  username: !secret nest_user 
+  password: !secret nest_password
+
+thermostat:
+  platform: nest
+
+input_boolean:
+  alarm_lights:
+    name: Alarm Lights
+    initial: on
+    icon: mdi:alarm
+
+
+automation:
+- alias: Wake Up Dim
+  trigger:
+    platform: time
+    hours: 7
+    minutes: 40
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.__level_2
+    data:
+      brightness: 50
+
+- alias: Wake Up Medium
+  trigger:
+    platform: time
+    hours: 7
+    minutes: 50
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.__level_2
+    data:
+      brightness: 100
+
+- alias: Wake Up Bright
+  trigger:
+    platform: time
+    hours: 8
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.__level_2
+    data:
+      brightness: 200
+
+- alias: Wake Up Toggle
+  trigger:
+    platform: time
+    seconds: '/5'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '8:10:00'
+        before: '8:20:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights
+        state: 'on'
+  action:
+    service: light.toggle
+    entity_id: light.__level_2
+
+- alias: Wake Up Over
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights
+        state: 'on'
+  action:
+    service: light.turn_off
+    entity_id: light.__level_2
