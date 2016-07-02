@@ -14,6 +14,12 @@ http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   server_port: 443
+  
+mqtt:
+  broker: m12.cloudmqtt.com
+  port: 24782
+  username: HomeAssistant
+  password: !secret mqtt_password
 
 # Track the sun
 #sun:
