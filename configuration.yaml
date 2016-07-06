@@ -69,6 +69,12 @@ input_boolean:
     name: Alarm Lights
     initial: on
     icon: mdi:alarm
+    
+
+group:
+  bedroom_alarm_lights
+  entities:
+    - light.bedroom_overhead_level_2
 
 
 automation:
@@ -93,7 +99,7 @@ automation:
         state: 'on'
   action:
     service: light.turn_on
-    entity_id: light.__level_2
+    entity_id: group.bedroom_alarm_lights
     data:
       brightness: 50
 
@@ -118,7 +124,7 @@ automation:
         state: 'on'
   action:
     service: light.turn_on
-    entity_id: light.__level_2
+    entity_id: group.bedroom_alarm_lights
     data:
       brightness: 100
 
@@ -143,7 +149,7 @@ automation:
         state: 'on'
   action:
     service: light.turn_on
-    entity_id: light.__level_2
+    entity_id: group.bedroom_alarm_lights
     data:
       brightness: 200
 
@@ -168,7 +174,7 @@ automation:
         state: 'on'
   action:
     service: light.toggle
-    entity_id: light.__level_2
+    entity_id: group.bedroom_alarm_lights
 
 - alias: Wake Up Over
   trigger:
@@ -191,4 +197,4 @@ automation:
         state: 'on'
   action:
     service: light.turn_off
-    entity_id: light.__level_2
+    entity_id: group.bedroom_alarm_lights
