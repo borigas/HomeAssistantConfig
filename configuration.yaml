@@ -84,6 +84,7 @@ group:
     entities:
       - light.bedroom_overhead_level_2
   bedroom:
+    icon: mdi:hotel
     entities:
       - group.bedroom_alarm_lights
       - input_boolean.alarm_lights
