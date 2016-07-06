@@ -95,6 +95,7 @@ group:
       - media_player.right_chromecast
       - media_player.kitchen_chromecast
 
+alarm_clock:
 
 automation:
 - alias: Wake Up Dim
