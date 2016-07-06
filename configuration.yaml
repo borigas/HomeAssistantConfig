@@ -8,6 +8,10 @@ homeassistant:
   temperature_unit: F
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
+    
+  customize:
+    light.bedroom_overhead_level_2:
+      friendly_name: Bedroom
 
 http:
   api_password: !secret http_password
@@ -52,9 +56,6 @@ updater:
 zwave:
   usb_path: /dev/ttyACM0
   config_path: /home/pi/python-openzwave/openzwave/config
-  customize:
-    light.bedroom_overhead_level_2:
-      friendly_name: Bedroom
 
 nest:
   username: !secret nest_user 
