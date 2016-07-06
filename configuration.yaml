@@ -72,9 +72,25 @@ input_boolean:
     
 
 group:
-  bedroom_alarm_lights
-  entities:
-    - light.bedroom_overhead_level_2
+  default_view:
+    view: yes
+    entities:
+      - group.bedroom
+      - thermostat.hallwaynest
+      - group.media
+  bedroom_alarm_lights:
+    entities:
+      - light.bedroom_overhead_level_2
+  bedroom:
+    entities:
+      - group.bedroom_alarm_lights
+      - input_boolean.alarm_lights
+  media:
+    entities:
+      - media_player.center_chromecast
+      - media_player.left_chromecast
+      - media_player.right_chromecast
+      - media_player.kitchen_chromecast
 
 
 automation:
