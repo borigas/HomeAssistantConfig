@@ -52,6 +52,9 @@ updater:
 zwave:
   usb_path: /dev/ttyACM0
   config_path: /home/pi/python-openzwave/openzwave/config
+  customize:
+    light.bedroom_overhead_level_2:
+      friendly_name: Bedroom
 
 nest:
   username: !secret nest_user 
