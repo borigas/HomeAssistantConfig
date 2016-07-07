@@ -25,6 +25,10 @@ mqtt:
   username: HomeAssistant
   password: !secret mqtt_password
 
+device_tracker:
+  platform: owntracks
+  max_gps_accuracy: 200
+
 # Track the sun
 #sun:
 
