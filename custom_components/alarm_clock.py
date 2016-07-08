@@ -1,18 +1,30 @@
 import logging
-import homeassistant.helpers.entity import ToggleEntity
+from homeassistant.helpers.entity import ToggleEntity
+from homeassistant.helpers.entity_component import EntityComponent
 
 
 DOMAIN = 'alarm_clock'
 
 ENTITY_ID_FORMAT = DOMAIN + '.{}'
 
-def setup_platform(hass, config, add_devices, discovery_info=None):
-#	hass.states.set(
+_LOGGER = logging.getLogger(__name__)
+
+#def setup_platform(hass, config, add_devices, discovery_info=None):
+def setup(hass, config):
+	_LOGGER.info('Setting up ' + DOMAIN)
+
+	component = EntityComponent(_LOGGER, DOMAIN, hass)
 
 	clock = AlarmClock('bedroom', 'Bedroom Alarm', 'mdi:hotel')
 
-	add_devices([clock])
+	_LOGGER.info('Created ' + DOMAIN + ' instance')
 
+#	add_devices([clock])
+	component.add_entities([clock])
+
+	_LOGGER.info('Added ' + DOMAIN + ' devices')
+	
+	return True
 
 
 class AlarmClock(ToggleEntity):
