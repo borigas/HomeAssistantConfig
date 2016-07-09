@@ -79,6 +79,7 @@ group:
   default_view:
     view: yes
     entities:
+      - alarm_clock.bedroom
       - group.bedroom
       - thermostat.hallwaynest
       - group.media
