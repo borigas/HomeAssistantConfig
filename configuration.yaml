@@ -15,9 +15,9 @@ homeassistant:
 
 http:
   api_password: !secret http_password
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
-  server_port: 443
+#  ssl_certificate: !secret ssl_certificate
+#  ssl_key: !secret ssl_key
+  server_port: 8123
   
 mqtt:
   broker: m12.cloudmqtt.com
