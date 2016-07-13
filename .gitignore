@@ -4,3 +4,4 @@ home-assistant.db
 home-assistant.log
 pyozw.sqlite
 deps/
+*/__pycache__/
