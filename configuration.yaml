@@ -13,6 +13,13 @@ homeassistant:
     light.bedroom_overhead_level_2:
       friendly_name: Bedroom Ceiling
 
+zone:
+  name: Work
+  latitude: 40.813299
+  longitude: -96.710486
+  range: 250
+  icon: mdi:desktop-mac
+
 http:
   api_password: !secret http_password
 #  ssl_certificate: !secret ssl_certificate
@@ -21,13 +28,14 @@ http:
   
 mqtt:
   broker: m12.cloudmqtt.com
-  port: 24782
+  port: 14782
   username: HomeAssistant
   password: !secret mqtt_password
 
 device_tracker:
   platform: owntracks
   max_gps_accuracy: 200
+  track_new_devices: no
 
 # Track the sun
 #sun:
