@@ -5,3 +5,4 @@ home-assistant.log
 pyozw.sqlite
 deps/
 */__pycache__/
+*.save
