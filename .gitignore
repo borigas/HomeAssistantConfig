@@ -2,6 +2,7 @@ secrets.yaml
 OZW_Log.txt
 home-assistant.db
 home-assistant.log
+home-assistant_v2.db
 pyozw.sqlite
 deps/
 */__pycache__/
