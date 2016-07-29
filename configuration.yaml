@@ -94,15 +94,12 @@ input_boolean:
     initial: on
     icon: mdi:alarm
 
-switch:
+garage_door:
   platform: mqtt
   name: "East Garage Door"
   state_topic: "home/garage/door/east/status"
   command_topic: "home/garage/door/east/status/set"
-  payload_on: "OPEN"
-  payload_off: "CLOSE"
   optimistic: false
-  retain: true
 
 group:
 #  default_view:
