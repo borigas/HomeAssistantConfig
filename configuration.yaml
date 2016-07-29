@@ -17,8 +17,15 @@ zone:
   name: Work
   latitude: 40.813299
   longitude: -96.710486
-  range: 250
+  radius: 200
   icon: mdi:desktop-mac
+
+zone 2:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  radius: 500
+  icon: mdi:home
 
 http:
   api_password: !secret http_password
