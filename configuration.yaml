@@ -34,10 +34,13 @@ http:
   server_port: 8123
   
 mqtt:
-  broker: m12.cloudmqtt.com
-  port: 14782
-  username: HomeAssistant
-  password: !secret mqtt_password
+#  broker: m12.cloudmqtt.com
+#  port: 14782
+#  username: HomeAssistant
+#  password: !secret mqtt_password
+  broker: 127.0.0.1
+  port: 1883
+
 
 device_tracker:
   platform: owntracks
