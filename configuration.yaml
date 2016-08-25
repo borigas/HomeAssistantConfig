@@ -58,6 +58,24 @@ sensor:
       - ping
       - download
       - upload
+  - platform: mqtt
+    state_topic: "home/garage/door/c0928600"
+    name: "East Garage Door Raw"
+    qos: 0
+    unit_of_measurement: "ft"
+    value_template: '{{ value_json.Distance }}'
+  - platform: mqtt
+    state_topic: "home/garage/door/4413c000"
+    name: "West Garage Door Raw"
+    qos: 0
+    unit_of_measurement: "ft"
+    value_template: '{{ value_json.Distance }}'
+  - platform: mqtt
+    state_topic: "owntracks/Ben/g3"
+    name: "Ben's Phone Battery"
+    qos: 0
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
 
 # View all events in a logbook
 logbook:
@@ -98,11 +116,19 @@ input_boolean:
     icon: mdi:alarm
 
 garage_door:
-  platform: mqtt
-  name: "East Garage Door"
-  state_topic: "home/garage/door/east/status"
-  command_topic: "home/garage/door/east/status/set"
-  optimistic: false
+  - platform: mqtt
+    name: "East Garage Door"
+    state_topic: "home/garage/door/c0928600"
+    command_topic: "home/garage/door/c0928600/set"
+    optimistic: false
+    value_template: '{{ value_json.Status }}'
+  - platform: mqtt
+    name: "West Garage Door"
+    state_topic: "home/garage/door/4413c000"
+    command_topic: "home/garage/door/4413c000"
+    optimistic: false
+    value_template: '{{ value_json.Status }}'
+
 
 group:
 #  default_view:
