@@ -125,7 +125,7 @@ garage_door:
   - platform: mqtt
     name: "West Garage Door"
     state_topic: "home/garage/door/4413c000"
-    command_topic: "home/garage/door/4413c000"
+    command_topic: "home/garage/door/4413c000/set"
     optimistic: false
     value_template: '{{ value_json.Status }}'
 
