@@ -4,8 +4,7 @@ homeassistant:
   # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
-  # C for Celcius, F for Fahrenheit
-  temperature_unit: F
+  unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
     
@@ -115,19 +114,27 @@ input_boolean:
     initial: on
     icon: mdi:alarm
 
-garage_door:
+cover:
   - platform: mqtt
     name: "East Garage Door"
     state_topic: "home/garage/door/c0928600"
     command_topic: "home/garage/door/c0928600/set"
     optimistic: false
     value_template: '{{ value_json.Status }}'
+    payload_open: 'open'
+    payload_close: 'close'
+    state_open: 'open'
+    state_closed: 'closed'
   - platform: mqtt
     name: "West Garage Door"
     state_topic: "home/garage/door/4413c000"
     command_topic: "home/garage/door/4413c000/set"
     optimistic: false
     value_template: '{{ value_json.Status }}'
+    payload_open: 'open'
+    payload_close: 'close'
+    state_open: 'open'
+    state_closed: 'closed'
 
 
 group:
