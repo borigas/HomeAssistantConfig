@@ -57,6 +57,21 @@ sensor:
       - ping
       - download
       - upload
+    minute:
+      - 0
+      - 10
+      - 20
+      - 30
+      - 40
+      - 50
+  - platform: fastdotcom
+    minute:
+      - 5
+      - 15
+      - 25
+      - 35
+      - 45
+      - 55
   - platform: mqtt
     state_topic: "home/garage/door/c0928600"
     name: "East Garage Door Raw"
@@ -166,6 +181,7 @@ group:
       - sensor.speedtest_download
       - sensor.speedtest_upload
       - sensor.speedtest_ping
+      - sensor.fastcom_download
   media:
     entities:
       - media_player.center_chromecast
