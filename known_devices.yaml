@@ -5,3 +5,10 @@ ben_g3:
   picture: https://secure.gravatar.com/avatar/72ad9ece205d095c1684cfd6b1b57508?s=64
   track: yes
   hide_if_away: no
+
+benphone_g3:
+  name: BenPhone
+  mac: 
+  picture: 
+  track: no
+  hide_if_away: no
