@@ -202,6 +202,23 @@ group:
 alarm_clock:
 
 automation:
+- alias: Leave Home
+  entity_id: device_tracker.ben_g3
+  zone: zone.home
+  event: leave
+- alias: Arrive Home
+  entity_id: device_tracker.ben_g3
+  zone: zone.home
+  event: enter
+- alias: Leave Work
+  entity_id: device_tracker.ben_g3
+  zone: zone.work
+  event: leave
+- alias: Arrive at Work
+  entity_id: device_tracker.ben_g3
+  zone: zone.work
+  event: enter
+
 - alias: Wake Up Dim
   trigger:
     platform: time
