@@ -339,3 +339,12 @@ automation:
   action:
     service: light.turn_off
     entity_id: group.bedroom_alarm_lights
+#- alias: time
+#  trigger:
+#    platform: time
+#    minutes: '/1'
+#    seconds: 0
+#  action:
+#    - service: notify.pushbullet
+#      data:
+#        message: lolol
