@@ -157,10 +157,14 @@ cover:
     state_closed: "closed"
 
 notify:
-  name: HTML5
-  platform: html5
-  gcm_api_key: !secret gcm_api_key
-  gcm_sender_id: !secret gcm_sender_id
+#  platform: html5
+#  name: HTML5
+#  gcm_api_key: !secret gcm_api_key
+#  gcm_sender_id: !secret gcm_sender_id
+  platform: pushbullet
+  api_key: !secret pushbullet_api_key
+  name: pushbullet
+
 
 
 group:
