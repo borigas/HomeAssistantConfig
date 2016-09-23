@@ -211,20 +211,34 @@ automation:
   action:
     - service: notify.pushbullet
       data: "Ben left home"
-    
-  
-#- alias: Arrive Home
-#  entity_id: device_tracker.ben_g3
-#  zone: zone.home
-#  event: enter
-#- alias: Leave Work
-#  entity_id: device_tracker.ben_g3
-#  zone: zone.work
-#  event: leave
-#- alias: Arrive at Work
-#  entity_id: device_tracker.ben_g3
-#  zone: zone.work
-#  event: enter
+- alias: Arrive Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben_g3
+    zone: zone.home
+    event: enter
+  action:
+    - service: notify.pushbullet
+      data: "Ben arrived home"
+      
+- alias: Leave Work
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben_g3
+    zone: zone.work
+    event: leave
+  action:
+    - service: notify.pushbullet
+      data: "Ben left work"
+- alias: Arrive at Work
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben_g3
+    zone: zone.work
+    event: enter
+  action:
+    - service: notify.pushbullet
+      data: "Ben arrived at work"
 
 - alias: Wake Up Dim
   trigger:
