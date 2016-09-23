@@ -210,7 +210,8 @@ automation:
     event: leave
   action:
     - service: notify.pushbullet
-      data: "Ben left home"
+      data: 
+        message: "Ben left home"
 - alias: Arrive Home
   trigger:
     platform: zone
@@ -219,7 +220,8 @@ automation:
     event: enter
   action:
     - service: notify.pushbullet
-      data: "Ben arrived home"
+      data: 
+        message: "Ben arrived home"
       
 - alias: Leave Work
   trigger:
@@ -229,7 +231,8 @@ automation:
     event: leave
   action:
     - service: notify.pushbullet
-      data: "Ben left work"
+      data: 
+        message: "Ben left work"
 - alias: Arrive at Work
   trigger:
     platform: zone
@@ -238,7 +241,8 @@ automation:
     event: enter
   action:
     - service: notify.pushbullet
-      data: "Ben arrived at work"
+      data: 
+        message: "Ben arrived at work"
 
 - alias: Wake Up Dim
   trigger:
