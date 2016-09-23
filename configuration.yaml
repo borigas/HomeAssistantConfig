@@ -4,6 +4,7 @@ homeassistant:
   # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
+  elevation: 400
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
