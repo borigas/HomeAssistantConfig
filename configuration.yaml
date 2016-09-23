@@ -120,7 +120,7 @@ nest:
   username: !secret nest_user 
   password: !secret nest_password
 
-thermostat:
+climate:
   platform: nest
 
 input_boolean:
