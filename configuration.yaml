@@ -202,10 +202,17 @@ group:
 alarm_clock:
 
 automation:
-#- alias: Leave Home
-#  entity_id: device_tracker.ben_g3
-#  zone: zone.home
-#  event: leave
+- alias: Leave Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben_g3
+    zone: zone.home
+    event: leave
+  action:
+    - service: notify.pushbullet
+      data: "Ben left home"
+    
+  
 #- alias: Arrive Home
 #  entity_id: device_tracker.ben_g3
 #  zone: zone.home
