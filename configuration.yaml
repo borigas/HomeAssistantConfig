@@ -339,6 +339,20 @@ automation:
   action:
     service: light.turn_off
     entity_id: group.bedroom_alarm_lights
+
+- alias: Garage Open
+  trigger:
+    platform: state
+    entity_id: cover.bens_garage_door, cover.britts_garage_door
+    state: 'open'
+    for:
+      minutes: 1
+  action:
+    - service: notify.pushbullet
+      data_template:
+        message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state }} for {{ trigger.for }}'
+    
+
 #- alias: time
 #  trigger:
 #    platform: time
