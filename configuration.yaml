@@ -131,7 +131,6 @@ input_boolean:
     icon: mdi:alarm
 
 cover:
-#garage_door:
   - platform: mqtt
     name: "Britt's Garage Door"
     state_topic: "home/garage/door/c0928600"
@@ -140,8 +139,6 @@ cover:
     value_template: '{{ value_json.Status }}'
     payload_open: "open"
     payload_close: "close"
-#    service_open: "open"
-#    service_close: "close"
     state_open: "open"
     state_closed: "closed"
   - platform: mqtt
@@ -150,8 +147,6 @@ cover:
     command_topic: "home/garage/door/4413c000/set"
     optimistic: false
     value_template: '{{ value_json.Status }}'
-#    service_open: "open"
-#    service_close: "close"
     payload_open: "open"
     payload_close: "close"
     state_open: "open"
