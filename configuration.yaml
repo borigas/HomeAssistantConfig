@@ -17,7 +17,7 @@ zone:
   name: Work
   latitude: 40.813299
   longitude: -96.710486
-  radius: 200
+  radius: 500
   icon: mdi:desktop-mac
 
 zone 2:
