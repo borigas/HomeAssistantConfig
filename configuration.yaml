@@ -255,6 +255,27 @@ automation:
     - service: notify.pushbullet
       data: 
         message: "Ben arrived home"
+
+- alias: Britt Left Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.britt_britt
+    zone: zone.home
+    event: leave
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "Britt left home"
+- alias: Britt Arrived Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.britt_britt
+    zone: zone.home
+    event: enter
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "Britt arrived home"
       
 - alias: Leave Work
   trigger:
