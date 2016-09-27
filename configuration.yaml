@@ -188,18 +188,16 @@ script:
     sequence:
       - service: automation.reload
         
-  
-
 
 group:
-#  default_view:
-#    view: yes
-#    entities:
-#      - alarm_clock.bedroom
-#      - group.bedroom
-#      - thermostat.hallwaynest
-#      - speedtest
-#      - group.media
+  default_view:
+    view: yes
+    entities:
+      - group.bedroom
+      - group.garage
+      - climate.hallwaynest
+      - group.speedtest
+      - group.media
   bedroom:
     icon: mdi:hotel
     entities:
@@ -217,6 +215,12 @@ group:
       - media_player.left_chromecast
       - media_player.right_chromecast
       - media_player.basement
+  garage:
+    entities:
+      - cover.bens_garage_door
+      - cover.britts_garage_door
+      - sensor.bens_garage_door_raw
+      - sensor.britts_garage_door_raw
   Home Assistant:
     entities:
       - script.restart_hass
@@ -224,6 +228,11 @@ group:
       - script.pull_github
       - script.reload_automation
       - script.reload_groups
+  Admin:
+    view: yes
+    entities:
+      - group.home_assistant
+
 
 automation:
 - alias: Leave Home
