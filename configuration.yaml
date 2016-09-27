@@ -45,7 +45,7 @@ mqtt:
 device_tracker:
   platform: owntracks
   max_gps_accuracy: 200
-  track_new_devices: no
+  track_new_devices: yes
 
 # Track the sun
 #sun:

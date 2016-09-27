@@ -12,3 +12,10 @@ benphone_g3:
   picture: 
   track: no
   hide_if_away: no
+
+britt_britt:
+  name: Britt
+  mac: 
+  picture: 
+  track: yes
+  hide_if_away: no
