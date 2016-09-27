@@ -167,6 +167,34 @@ notify:
   name: pushbullet
 
 
+shell_command:
+  update_hass: /home/pi/HomeAssistantConfig/update.sh
+  pull_github: git -C '/home/pi/HomeAssistantConfig' pull
+
+script:
+  restart_hass:
+    alias: Restart HomeAssistant
+    sequence:
+      - service: homeassistant.restart
+  update_hass:
+    alias: Update HomeAssistant
+    sequence:
+      - service: shell_command.update_hass
+  pull_github:
+    alias: Pull from Github
+    sequence:
+      - service: shell_command.pull_github
+  reload_groups:
+    alias: Reload Groups
+    sequence:
+      - service: group.reload
+  reload_automation:
+    alias: Reload Automation
+    sequence:
+      - service: automation.reload
+        
+  
+
 
 group:
 #  default_view:
@@ -199,6 +227,13 @@ group:
       - media_player.left_chromecast
       - media_player.right_chromecast
       - media_player.basement
+  Home Assistant:
+    entities:
+      - script.restart_hass
+      - script.update_hass
+      - script.pull_github
+      - script.reload_automation
+      - script.reload_groups
 
 alarm_clock:
 

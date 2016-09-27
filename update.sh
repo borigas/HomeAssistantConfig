@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Stop HASS
-sudo systemctl stop home-assistant.service
+#sudo systemctl stop home-assistant.service
 # Become user 'hass'
 sudo su -s /bin/bash hass <<'EOF'
 # Activate the virtualenv
