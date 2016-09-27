@@ -200,11 +200,6 @@ group:
 #      - thermostat.hallwaynest
 #      - speedtest
 #      - group.media
-  bedroom_alarm_lights:
-    name: Bedroom Lights
-    icon: mdi:lightbulb
-    entities:
-      - light.bedroom_overhead_level_2
   bedroom:
     icon: mdi:hotel
     entities:
@@ -229,8 +224,6 @@ group:
       - script.pull_github
       - script.reload_automation
       - script.reload_groups
-
-alarm_clock:
 
 automation:
 - alias: Leave Home
