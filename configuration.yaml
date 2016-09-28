@@ -193,6 +193,9 @@ group:
   default_view:
     view: yes
     entities:
+      - sensor.bens_phone_battery
+      - device_tracker.ben_g3
+      - device_tracker.britt_britt
       - group.bedroom
       - group.garage
       - climate.hallwaynest
