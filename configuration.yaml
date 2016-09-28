@@ -262,6 +262,34 @@ group:
     view: yes
     entities:
       - group.home_assistant
+  Weather:
+    view: yes
+    entities:
+      - sensor.forecastio_apparent_temperature
+      - sensor.forecastio_cloud_coverage
+      - sensor.forecastio_daily_high_apparent_temperature
+      - sensor.forecastio_daily_high_temperature
+      - sensor.forecastio_daily_low_apparent_temperature
+      - sensor.forecastio_daily_low_temperature
+      - sensor.forecastio_daily_max_precip_intensity
+      - sensor.forecastio_daily_summary
+      - sensor.forecastio_dew_point
+      - sensor.forecastio_hourly_summary
+      - sensor.forecastio_humidity
+      - sensor.forecastio_icon
+      - sensor.forecastio_minutely_summary
+      - sensor.forecastio_nearest_storm_bearing
+      - sensor.forecastio_nearest_storm_distance
+      - sensor.forecastio_ozone
+      - sensor.forecastio_precip
+      - sensor.forecastio_precip_intensity
+      - sensor.forecastio_precip_probability
+      - sensor.forecastio_pressure
+      - sensor.forecastio_summary
+      - sensor.forecastio_temperature
+      - sensor.forecastio_visibility
+      - sensor.forecastio_wind_bearing
+      - sensor.forecastio_wind_speed
 
 
 automation:
