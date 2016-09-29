@@ -71,7 +71,6 @@ sensor:
       - humidity
       - pressure
       - visibility
-      - ozone
       - minutely_summary
       - hourly_summary
       - daily_summary
@@ -281,7 +280,6 @@ group:
       - sensor.forecastio_minutely_summary
       - sensor.forecastio_nearest_storm_bearing
       - sensor.forecastio_nearest_storm_distance
-      - sensor.forecastio_ozone
       - sensor.forecastio_precip
       - sensor.forecastio_precip_intensity
       - sensor.forecastio_precip_probability
