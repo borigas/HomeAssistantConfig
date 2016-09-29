@@ -220,6 +220,7 @@ group:
   default_view:
     view: yes
     entities:
+      - updater.updater
       - sensor.bens_phone_battery
       - device_tracker.ben_g3
       - device_tracker.britt_britt
