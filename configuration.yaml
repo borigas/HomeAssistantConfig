@@ -190,7 +190,7 @@ notify:
 
 shell_command:
   update_hass: /home/pi/HomeAssistantConfig/update.sh
-  pull_github: git -C '/home/pi/HomeAssistantConfig' pull
+  pull_github: /home/pi/HomeAssistantConfig/pull_github.sh
 
 script:
   restart_hass:
