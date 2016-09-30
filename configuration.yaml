@@ -233,6 +233,11 @@ group:
     entities:
       - light.bedroom_overhead_level_2
       - input_boolean.alarm_lights
+  bedroom_alarm_lights:
+    name: Bedroom Lights
+    icon: mdi:lightbulb
+    entities:
+      - light.bedroom_overhead_level_2
   speedtest:
     entities:
       - sensor.speedtest_download
