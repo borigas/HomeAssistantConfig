@@ -248,7 +248,10 @@ group:
       - climate.hallwaynest
       - group.speedtest
       - group.media
-      - group.weather_summary
+      - sensor.forecastio_apparent_temperature
+      - sensor.forecastio_daily_low_apparent_temperature
+      - sensor.forecastio_daily_high_apparent_temperature
+      - sensor.forecastio_precip_probability
   bedroom:
     icon: mdi:hotel
     entities:
@@ -326,6 +329,7 @@ group:
       - sensor.forecastio_visibility
       - sensor.forecastio_wind_bearing
       - sensor.forecastio_wind_speed
+      - group.weather_summary
 
 
 automation:
