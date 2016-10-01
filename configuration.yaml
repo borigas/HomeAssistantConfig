@@ -228,6 +228,7 @@ group:
       - climate.hallwaynest
       - group.speedtest
       - group.media
+      - group.weather_summary
   bedroom:
     icon: mdi:hotel
     entities:
@@ -256,6 +257,16 @@ group:
       - cover.britts_garage_door
       - sensor.bens_garage_door_raw
       - sensor.britts_garage_door_raw
+  Weather Summary:
+    entities:
+      - sensor.forecastio_apparent_temperature
+      - sensor.forecastio_daily_low_apparent_temperature
+      - sensor.forecastio_daily_high_apparent_temperature
+      - sensor.forecastio_precip_probability
+      - sensor.forecastio_daily_max_precip_intensity
+      - sensor.forecastio_summary
+      - sensor.forecastio_hourly_summary
+      - sensor.forecastio_daily_summary
   Home Assistant:
     entities:
       - script.restart_hass
