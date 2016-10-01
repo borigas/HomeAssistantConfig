@@ -12,22 +12,22 @@ homeassistant:
   customize:
     light.bedroom_overhead_level_2:
       friendly_name: Bedroom Ceiling
-    sensor.forecastio_apparent_temperature
+    sensor.forecastio_apparent_temperature:
       friendly_name: Temp
-    sensor.forecastio_daily_low_apparent_temperature
+    sensor.forecastio_daily_low_apparent_temperature:
       friendly_name: Low Temp
-    sensor.forecastio_daily_high_apparent_temperature
+    sensor.forecastio_daily_high_apparent_temperature:
       friendly_name: High Temp
-    sensor.forecastio_precip_probability
+    sensor.forecastio_precip_probability:
       friendly_name: Precip %
-    sensor.forecastio_daily_max_precip_intensity
+    sensor.forecastio_daily_max_precip_intensity:
       friendly_name: Precip Intensity
-    sensor.forecastio_summary
-      friendly_name: Summary
-    sensor.forecastio_hourly_summary
-      friendly_name: Hourly Summary
-    sensor.forecastio_daily_summary
-      friendly_name: Daily Summary
+    sensor.forecastio_summary:
+      friendly_name: Now
+    sensor.forecastio_hourly_summary:
+      friendly_name: Today
+    sensor.forecastio_daily_summary:
+      friendly_name: This Week
 
 zone:
   name: Work
