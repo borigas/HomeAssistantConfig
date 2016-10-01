@@ -213,6 +213,10 @@ script:
     alias: Reload Automation
     sequence:
       - service: automation.reload
+  reload_core:
+    alias: Reload Core Config
+    sequence:
+      - service: homeassistant.reload_core_config
         
 
 group:
@@ -274,6 +278,7 @@ group:
       - script.pull_github
       - script.reload_automation
       - script.reload_groups
+      - script.reload_core
   Admin:
     view: yes
     entities:
