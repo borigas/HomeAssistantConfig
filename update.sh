@@ -13,3 +13,9 @@ EOF
 
 # Restart Home Assistant
 sudo systemctl restart home-assistant.service
+
+# Push updated HA_VERSION to github
+git -C "/home/pi/HomeAssistantConfig" add "/home/pi/HomeAssistant/.HA_VERSION"
+git -C "/home/pi/HomeAssistantConfig" commit -m "Updated to new version"
+git -C "/home/pi/HomeAssistantConfig" push
+
