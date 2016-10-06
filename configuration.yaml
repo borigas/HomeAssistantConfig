@@ -12,6 +12,7 @@ homeassistant:
   customize:
     light.bedroom_overhead_level_2:
       friendly_name: Bedroom Ceiling
+      icon: mdi:hotel
     sensor.forecastio_apparent_temperature:
       friendly_name: Temp
     sensor.forecastio_daily_low_apparent_temperature:
@@ -252,11 +253,7 @@ group:
       - sensor.forecastio_daily_low_apparent_temperature
       - sensor.forecastio_daily_high_apparent_temperature
       - sensor.forecastio_precip_probability
-  bedroom:
-    icon: mdi:hotel
-    entities:
       - light.bedroom_overhead_level_2
-      - input_boolean.alarm_lights
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
@@ -302,6 +299,7 @@ group:
     view: yes
     entities:
       - group.home_assistant
+      - input_boolean.alarm_lights
   Weather:
     view: yes
     entities:
