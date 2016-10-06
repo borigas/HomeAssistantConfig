@@ -295,10 +295,6 @@ group:
       - script.reload_automation
       - script.reload_groups
       - script.reload_core
-  Admin:
-    view: yes
-    entities:
-      - group.home_assistant
       - input_boolean.alarm_lights
   Weather:
     view: yes
@@ -328,6 +324,10 @@ group:
       - sensor.forecastio_wind_bearing
       - sensor.forecastio_wind_speed
       - group.weather_summary
+  Admin:
+    view: yes
+    entities:
+      - group.home_assistant
 
 
 automation:
