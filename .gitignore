@@ -8,3 +8,4 @@ pyozw.sqlite
 deps/
 */__pycache__/
 *.save
+.uuid
