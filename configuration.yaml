@@ -134,6 +134,9 @@ sensor:
     qos: 0
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
+  - platform: mqtt
+    state_topic: "Ben/Location"
+    name: "Ben's Tasker Location"
 
 # View all events in a logbook
 logbook:
@@ -242,6 +245,7 @@ group:
     entities:
       - updater.updater
       - sensor.bens_phone_battery
+      - sensor.bens_tasker_location
       - device_tracker.ben_g3
       - device_tracker.britt_britt
       - group.bedroom
