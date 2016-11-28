@@ -274,7 +274,7 @@ group:
       - media_player.center_chromecast
       - media_player.left_chromecast
       - media_player.right_chromecast
-      - media_player.basement
+      - media_player.basement_chromecast
   garage:
     entities:
       - cover.bens_garage_door
