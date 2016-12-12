@@ -49,6 +49,8 @@ http:
 #  ssl_certificate: !secret ssl_certificate
 #  ssl_key: !secret ssl_key
   server_port: 8123
+
+emulated_hue:
   
 mqtt:
 #  broker: m12.cloudmqtt.com
