@@ -498,6 +498,29 @@ automation:
     service: light.toggle
     entity_id: group.bedroom_alarm_lights
 
+- alias: Wake Up Toggle Over
+  trigger:
+    platform: time
+    hours: 8
+    minutes: 20
+    seconds: 1
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.bedroom_alarm_lights
+
 - alias: Wake Up Over
   trigger:
     platform: time
