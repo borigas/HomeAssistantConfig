@@ -265,6 +265,10 @@ group:
     icon: mdi:lightbulb
     entities:
       - light.bedroom_overhead_level_2_0
+  bedroom:
+    name: Bedroom
+    entities:
+      - light.bedroom_overhead_level_2_0
   speedtest:
     entities:
       - sensor.speedtest_download
