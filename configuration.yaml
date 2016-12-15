@@ -172,6 +172,11 @@ nest:
 climate:
   platform: nest
 
+remote:
+  - platform: harmony
+    name: LivingRoom
+    host: 192.168.1.75
+
 input_boolean:
   alarm_lights:
     name: Should Alarm Lights
