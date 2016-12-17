@@ -13,6 +13,7 @@ homeassistant:
     light.bedroom_overhead_level_2_0:
       friendly_name: Bedroom Ceiling
       icon: mdi:hotel
+      emulated_hue_name: Bedroom
     sensor.dark_sky_apparent_temperature:
       friendly_name: Temp
     sensor.dark_sky_daily_low_apparent_temperature:
@@ -51,6 +52,11 @@ http:
   server_port: 8123
 
 emulated_hue:
+  exposed_domains:
+    - switch
+    - light
+    - input_boolean
+    - media_player
   
 mqtt:
 #  broker: m12.cloudmqtt.com
@@ -268,10 +274,6 @@ group:
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
-    entities:
-      - light.bedroom_overhead_level_2_0
-  bedroom:
-    name: Bedroom
     entities:
       - light.bedroom_overhead_level_2_0
   speedtest:
