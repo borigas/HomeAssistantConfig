@@ -188,7 +188,10 @@ input_boolean:
     name: Should Alarm Lights
     initial: on
     icon: mdi:alarm
-
+  alarm_lights_today:
+    name: Today's Alarm
+    initial: off
+    
 cover:
   - platform: mqtt
     name: "Britt's Garage Door"
@@ -428,7 +431,7 @@ automation:
           - thu
           - fri
       - condition: state
-        entity_id: input_boolean.alarm_lights
+        entity_id: input_boolean.alarm_lights_today
         state: 'on'
   action:
     service: light.turn_on
@@ -453,7 +456,7 @@ automation:
           - thu
           - fri
       - condition: state
-        entity_id: input_boolean.alarm_lights
+        entity_id: input_boolean.alarm_lights_today
         state: 'on'
   action:
     service: light.turn_on
@@ -478,7 +481,7 @@ automation:
           - thu
           - fri
       - condition: state
-        entity_id: input_boolean.alarm_lights
+        entity_id: input_boolean.alarm_lights_today
         state: 'on'
   action:
     service: light.turn_on
@@ -503,7 +506,7 @@ automation:
           - thu
           - fri
       - condition: state
-        entity_id: input_boolean.alarm_lights
+        entity_id: input_boolean.alarm_lights_today
         state: 'on'
   action:
     service: light.toggle
@@ -526,7 +529,7 @@ automation:
           - thu
           - fri
       - condition: state
-        entity_id: input_boolean.alarm_lights
+        entity_id: input_boolean.alarm_lights_today
         state: 'on'
   action:
     service: light.turn_on
@@ -549,11 +552,39 @@ automation:
           - thu
           - fri
       - condition: state
-        entity_id: input_boolean.alarm_lights
+        entity_id: input_boolean.alarm_lights_today
         state: 'on'
   action:
     service: light.turn_off
     entity_id: group.bedroom_alarm_lights
+    
+- alias: Enable todays alarm
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_lights
+    state: 'on'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.alarm_lights_today
+    
+- alias: Disable todays alarm
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_lights
+    state: 'off'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.alarm_lights_today
 
 - alias: Garage Open
   trigger:
