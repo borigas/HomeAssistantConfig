@@ -50,6 +50,7 @@ http:
 #  ssl_certificate: !secret ssl_certificate
 #  ssl_key: !secret ssl_key
   server_port: 8123
+  use_x_forwarded_for: true
 
 emulated_hue:
   exposed_domains:
