@@ -79,6 +79,7 @@ sensor:
   # Prediction of weather
   - platform: darksky
     api_key: !secret forecast_api_key
+    update_interval: '01:00:00'
     monitored_conditions:
       - summary
       #- icon
