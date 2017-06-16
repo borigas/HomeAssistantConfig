@@ -69,9 +69,14 @@ mqtt:
 
 
 device_tracker:
-  platform: owntracks
-  max_gps_accuracy: 200
-  track_new_devices: yes
+  - platform: netgear
+    host: 192.168.1.1
+    username: admin
+    password: !secret netgear_password
+    port: 80
+    track_new_devices: False
+    interval_seconds: 60
+    consider_home: 00:03:00
 
 # Track the sun
 #sun:
@@ -162,6 +167,8 @@ frontend:
 
 # Discover some devices automatically
 discovery:
+  ignore:
+    - netgear_router
 
 # Enables support for tracking state changes over time.
 history:
@@ -264,8 +271,8 @@ group:
       - updater.updater
       - sensor.bens_phone_battery
       - sensor.bens_tasker_location
-      - device_tracker.ben_g3
-      - device_tracker.britt_britt
+      - device_tracker.ben
+      - device_tracker.britt
       - group.bedroom
       - group.garage
       - climate.hallwaynest
@@ -332,7 +339,7 @@ automation:
 - alias: Leave Home
   trigger:
     platform: zone
-    entity_id: device_tracker.ben_g3
+    entity_id: device_tracker.ben
     zone: zone.home
     event: leave
   action:
@@ -342,7 +349,7 @@ automation:
 - alias: Arrive Home
   trigger:
     platform: zone
-    entity_id: device_tracker.ben_g3
+    entity_id: device_tracker.ben
     zone: zone.home
     event: enter
   action:
@@ -353,7 +360,7 @@ automation:
 - alias: Britt Left Home
   trigger:
     platform: zone
-    entity_id: device_tracker.britt_britt
+    entity_id: device_tracker.britt
     zone: zone.home
     event: leave
   action:
@@ -363,7 +370,7 @@ automation:
 - alias: Britt Arrived Home
   trigger:
     platform: zone
-    entity_id: device_tracker.britt_britt
+    entity_id: device_tracker.britt
     zone: zone.home
     event: enter
   action:
@@ -374,7 +381,7 @@ automation:
 - alias: Leave Work
   trigger:
     platform: zone
-    entity_id: device_tracker.ben_g3
+    entity_id: device_tracker.ben
     zone: zone.work
     event: leave
   action:
@@ -384,7 +391,7 @@ automation:
 - alias: Arrive at Work
   trigger:
     platform: zone
-    entity_id: device_tracker.ben_g3
+    entity_id: device_tracker.ben
     zone: zone.work
     event: enter
   action:
