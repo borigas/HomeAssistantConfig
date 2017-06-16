@@ -143,15 +143,6 @@ sensor:
     qos: 0
     unit_of_measurement: "ft"
     value_template: '{{ value_json.Distance }}'
-  - platform: mqtt
-    state_topic: "owntracks/Ben/g3"
-    name: "Ben's Phone Battery"
-    qos: 0
-    unit_of_measurement: "%"
-    value_template: '{{ value_json.batt }}'
-  - platform: mqtt
-    state_topic: "Ben/Location"
-    name: "Ben's Tasker Location"
 
 # View all events in a logbook
 logbook:
@@ -269,8 +260,6 @@ group:
     view: yes
     entities:
       - updater.updater
-      - sensor.bens_phone_battery
-      - sensor.bens_tasker_location
       - device_tracker.ben
       - device_tracker.britt
       - group.bedroom
