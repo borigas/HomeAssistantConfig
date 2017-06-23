@@ -191,6 +191,12 @@ input_boolean:
   alarm_lights_today:
     name: Today's Alarm
     initial: off
+
+switch:
+  platform: dlink
+  host: 192.168.1.40
+  username: !secrets dlink_user
+  password: !secrets dlink_password
     
 cover:
   - platform: mqtt
