@@ -194,7 +194,7 @@ input_boolean:
 
 switch:
   platform: dlink
-  host: 192.168.1.40
+  host: http://192.168.1.83
   username: !secret dlink_user
   password: !secret dlink_password
     
@@ -570,7 +570,7 @@ automation:
   trigger:
     platform: state
     entity_id: cover.bens_garage_door, cover.britts_garage_door
-    state: 'open'
+    to: 'open'
     for:
       minutes: 1
   action:
