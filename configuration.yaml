@@ -30,6 +30,8 @@ homeassistant:
       friendly_name: Today
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
+    script.center_volume_up:
+      emulated_hue: true
 
 zone:
   name: Work
@@ -260,6 +262,16 @@ script:
     alias: Reload Core Config
     sequence:
       - service: homeassistant.reload_core_config
+  center_volume_up:
+    alias: Center Volume Up
+    sequence:
+      - service: remote.send_command
+        data_template:
+          command: VolumeUp
+          device: 33807080
+          entity_id: remote.livingroom
+          num_repeats: 2
+          delay_secs: 0.2
         
 
 group:
