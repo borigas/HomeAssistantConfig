@@ -53,6 +53,7 @@ http:
   use_x_forwarded_for: true
 
 emulated_hue:
+  listen_port: 80
   exposed_domains:
     - switch
     - light
