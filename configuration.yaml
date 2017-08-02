@@ -435,7 +435,7 @@ group:
       - device_tracker.britt
       - group.bedroom
       - group.garage
-      - climate.hallwaynest
+      - climate.hallway_nest
       - group.speedtest
       - group.media
       - sensor.dark_sky_apparent_temperature
