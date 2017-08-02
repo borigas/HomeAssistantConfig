@@ -34,6 +34,10 @@ homeassistant:
       emulated_hue: true
     script.tv_center_volume_down:
       emulated_hue: true
+    script.tv_center_volume_way_up:
+      emulated_hue: true
+    script.tv_center_volume_way_down:
+      emulated_hue: true
     script.tv_center_mute:
       emulated_hue: true
     script.tv_center_power_down:
@@ -43,6 +47,10 @@ homeassistant:
     script.tv_sides_volume_up:
       emulated_hue: true
     script.tv_sides_volume_down:
+      emulated_hue: true
+    script.tv_sides_volume_way_up:
+      emulated_hue: true
+    script.tv_sides_volume_way_down:
       emulated_hue: true
     script.tv_sides_mute:
       emulated_hue: true
@@ -300,6 +308,26 @@ script:
           entity_id: remote.livingroom
           num_repeats: 2
           delay_secs: 0.2
+  tv_center_volume_way_up:
+    alias: Center Volume Way Up
+    sequence:
+      - service: remote.send_command
+        data_template:
+          command: VolumeUp
+          device: 33807080
+          entity_id: remote.livingroom
+          num_repeats: 8
+          delay_secs: 0.2
+  tv_center_volume_way_down:
+    alias: Center Volume Way Down
+    sequence:
+      - service: remote.send_command
+        data_template:
+          command: VolumeDown
+          device: 33807080
+          entity_id: remote.livingroom
+          num_repeats: 8
+          delay_secs: 0.2
   tv_center_mute:
     alias: Center Mute
     sequence:
@@ -328,7 +356,6 @@ script:
           entity_id: remote.livingroom
           num_repeats: 5
           delay_secs: 0.4
-          
   tv_sides_volume_up:
     alias: Sides Volume Up
     sequence:
@@ -348,6 +375,26 @@ script:
           device: 35189272
           entity_id: remote.livingroom
           num_repeats: 2
+          delay_secs: 0.2
+  tv_sides_volume_way_up:
+    alias: Sides Volume Way Up
+    sequence:
+      - service: remote.send_command
+        data_template:
+          command: VolumeUp
+          device: 35189272
+          entity_id: remote.livingroom
+          num_repeats: 8
+          delay_secs: 0.2
+  tv_sides_volume_way_down:
+    alias: Sides Volume Way Down
+    sequence:
+      - service: remote.send_command
+        data_template:
+          command: VolumeDown
+          device: 35189272
+          entity_id: remote.livingroom
+          num_repeats: 8
           delay_secs: 0.2
   tv_sides_power_down:
     alias: Sides Power Down
