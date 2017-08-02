@@ -1,5 +1,6 @@
 secrets.yaml
 OZW_Log.txt
+nest.conf
 home-assistant.db
 home-assistant.log
 home-assistant_v2.db
