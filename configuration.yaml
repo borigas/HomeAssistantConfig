@@ -396,6 +396,14 @@ script:
           entity_id: remote.livingroom
           num_repeats: 8
           delay_secs: 0.2
+  tv_sides_mute:
+    alias: Center Mute
+    sequence:
+      - service: remote.send_command
+        data_template:
+          command: Mute
+          device: 35189272
+          entity_id: remote.livingroom
   tv_sides_power_down:
     alias: Sides Power Down
     sequence:
