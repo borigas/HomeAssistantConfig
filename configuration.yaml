@@ -447,11 +447,33 @@ group:
       - sensor.speedtest_ping
       - sensor.fastcom_download
   media:
+    view: yes
     entities:
+      - group.center_tv
+      - group.side_tvs
+      - media_player.basement_chromecast
+  center_tv:
+    entities:
+      - script.tv_center_power_up
+      - script.tv_center_power_down
+      - script.tv_center_volume_up
+      - script.tv_center_volume_down
+      - script.tv_center_volume_way_up
+      - script.tv_center_volume_way_down
+      - script.tv_center_mute
       - media_player.center_chromecast
+      - media_player.surround_chromecast
+  side_tvs:
+    entities:
+      - script.tv_sides_power_up
+      - script.tv_sides_power_down
+      - script.tv_sides_volume_up
+      - script.tv_sides_volume_down
+      - script.tv_sides_volume_way_up
+      - script.tv_sides_volume_way_down
+      - script.tv_sides_mute
       - media_player.left_chromecast
       - media_player.right_chromecast
-      - media_player.basement_chromecast
   garage:
     entities:
       - cover.bens_garage_door
