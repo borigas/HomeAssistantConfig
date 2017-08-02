@@ -449,6 +449,7 @@ group:
     entities:
       - light.bedroom_overhead_level_2_0
   speedtest:
+    name: Speedtest
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
@@ -485,6 +486,7 @@ group:
       - media_player.left_chromecast
       - media_player.right_chromecast
   garage:
+    name: Garage
     entities:
       - cover.bens_garage_door
       - cover.britts_garage_door
