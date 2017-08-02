@@ -453,6 +453,7 @@ group:
       - group.side_tvs
       - media_player.basement_chromecast
   center_tv:
+    name: Center TV
     entities:
       - script.tv_center_power_up
       - script.tv_center_power_down
@@ -464,6 +465,7 @@ group:
       - media_player.center_chromecast
       - media_player.surround_chromecast
   side_tvs:
+    name: Side TVs
     entities:
       - script.tv_sides_power_up
       - script.tv_sides_power_down
