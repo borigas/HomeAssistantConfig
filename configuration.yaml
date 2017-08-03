@@ -397,7 +397,7 @@ script:
           num_repeats: 8
           delay_secs: 0.2
   tv_sides_mute:
-    alias: Center Mute
+    alias: Sides Mute
     sequence:
       - service: remote.send_command
         data_template:
