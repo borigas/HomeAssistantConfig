@@ -5,6 +5,8 @@ home-assistant.db
 home-assistant.log
 home-assistant_v2.db
 home-assistant_v2.db-journal
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
 pyozw.sqlite
 deps/
 */__pycache__/
