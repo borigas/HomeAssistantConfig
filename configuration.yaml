@@ -10,7 +10,7 @@ homeassistant:
   time_zone: America/Chicago
     
   customize:
-    light.bedroom_overhead_level_2_0:
+    light.bedroom_overhead_level:
       friendly_name: Bedroom Ceiling
       icon: mdi:hotel
       emulated_hue_name: Bedroom
@@ -433,7 +433,6 @@ group:
       - updater.updater
       - device_tracker.ben
       - device_tracker.britt
-      - group.bedroom
       - group.garage
       - climate.hallway_nest
       - group.speedtest
@@ -442,7 +441,7 @@ group:
       - sensor.dark_sky_daily_low_apparent_temperature
       - sensor.dark_sky_daily_high_apparent_temperature
       - sensor.dark_sky_precip_probability
-      - light.bedroom_overhead_level_2_0
+      - light.bedroom_overhead_level
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
