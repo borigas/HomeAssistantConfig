@@ -185,6 +185,9 @@ conversation:
 # Enables the frontend
 frontend:
 
+# Enables configuration panel
+config:
+
 # Discover some devices automatically
 discovery:
   ignore:
