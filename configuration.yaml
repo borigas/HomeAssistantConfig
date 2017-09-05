@@ -663,52 +663,6 @@ automation:
     data:
       brightness: 200
 
-- alias: Wake Up Toggle
-  trigger:
-    platform: time
-    seconds: '/5'
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '8:10:00'
-        before: '8:20:00'
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      - condition: state
-        entity_id: input_boolean.alarm_lights_today
-        state: 'on'
-  action:
-    service: light.toggle
-    entity_id: group.bedroom_alarm_lights
-
-- alias: Wake Up Toggle Over
-  trigger:
-    platform: time
-    hours: 8
-    minutes: 20
-    seconds: 1
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      - condition: state
-        entity_id: input_boolean.alarm_lights_today
-        state: 'on'
-  action:
-    service: light.turn_on
-    entity_id: group.bedroom_alarm_lights
-
 - alias: Wake Up Over
   trigger:
     platform: time
