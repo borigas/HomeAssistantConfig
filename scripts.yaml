@@ -158,3 +158,28 @@ tv_sides_power_up:
         entity_id: remote.livingroom
         num_repeats: 5
         delay_secs: 0.4
+tv_sides_off:
+  alias: Side TVs
+  sequence:
+    - service: media_player.turn_off
+      data_template:
+        entity_id: media_player.right_chromecast
+    - service: media_player.turn_off
+      data_template:
+        entity_id: media_player.left_chromecast
+    - service: script.tv_sides_power_down
+tv_center_off:
+  alias: Center TV
+  sequence:
+    - service: media_player.turn_off
+      data_template:
+        entity_id: media_player.center_chromecast
+    - service: media_player.turn_off
+      data_template:
+        entity_id: media_player.surround_chromecast
+    - service: script.tv_center_power_down
+tv_living_room_off:
+  alias: Living Room TVs
+  sequence:
+    - service: script.tv_sides_off
+    - service: script.tv_center_off
