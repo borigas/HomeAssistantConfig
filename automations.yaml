@@ -1,0 +1,200 @@
+- alias: Leave Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben
+    zone: zone.home
+    event: leave
+  action:
+    - service: notify.pushbullet
+      data: 
+        message: "Ben left home"
+- alias: Arrive Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben
+    zone: zone.home
+    event: enter
+  action:
+    - service: notify.pushbullet
+      data: 
+        message: "Ben arrived home"
+
+- alias: Britt Left Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.britt
+    zone: zone.home
+    event: leave
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "Britt left home"
+- alias: Britt Arrived Home
+  trigger:
+    platform: zone
+    entity_id: device_tracker.britt
+    zone: zone.home
+    event: enter
+  action:
+    - service: notify.pushbullet
+      data:
+        message: "Britt arrived home"
+      
+- alias: Leave Work
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben
+    zone: zone.work
+    event: leave
+  action:
+    - service: notify.pushbullet
+      data: 
+        message: "Ben left work"
+- alias: Arrive at Work
+  trigger:
+    platform: zone
+    entity_id: device_tracker.ben
+    zone: zone.work
+    event: enter
+  action:
+    - service: notify.pushbullet
+      data: 
+        message: "Ben arrived at work"
+
+- alias: Wake Up Dim
+  trigger:
+    platform: time
+    hours: 7
+    minutes: 40
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights_today
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.bedroom_alarm_lights
+    data:
+      brightness: 50
+
+- alias: Wake Up Medium
+  trigger:
+    platform: time
+    hours: 7
+    minutes: 50
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights_today
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.bedroom_alarm_lights
+    data:
+      brightness: 100
+
+- alias: Wake Up Bright
+  trigger:
+    platform: time
+    hours: 8
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights_today
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.bedroom_alarm_lights
+    data:
+      brightness: 200
+
+- alias: Wake Up Over
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: input_boolean.alarm_lights_today
+        state: 'on'
+  action:
+    service: light.turn_off
+    entity_id: group.bedroom_alarm_lights
+    
+- alias: Enable todays alarm
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_lights
+    state: 'on'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.alarm_lights_today
+    
+- alias: Disable todays alarm
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_lights
+    state: 'off'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.alarm_lights_today
+
+- alias: Garage Open
+  trigger:
+    platform: state
+    entity_id: cover.bens_garage_door, cover.britts_garage_door
+    to: 'open'
+    for:
+      minutes: 1
+  action:
+    - service: notify.pushbullet
+      data_template:
+        message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state }} for {{ trigger.for }}'
