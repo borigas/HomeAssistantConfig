@@ -1,161 +1,160 @@
-script:
-  restart_hass:
-    alias: Restart HomeAssistant
-    sequence:
-      - service: homeassistant.restart
-  update_hass:
-    alias: Update HomeAssistant
-    sequence:
-      - service: shell_command.update_hass
-  pull_github:
-    alias: Pull from Github
-    sequence:
-      - service: shell_command.pull_github
-  reload_groups:
-    alias: Reload Groups
-    sequence:
-      - service: group.reload
-  reload_automation:
-    alias: Reload Automation
-    sequence:
-      - service: automation.reload
-  reload_core:
-    alias: Reload Core Config
-    sequence:
-      - service: homeassistant.reload_core_config
-  tv_center_volume_up:
-    alias: Center Volume Up
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeUp
-          device: 33807080
-          entity_id: remote.livingroom
-          num_repeats: 2
-          delay_secs: 0.2
-  tv_center_volume_down:
-    alias: Center Volume Down
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeDown
-          device: 33807080
-          entity_id: remote.livingroom
-          num_repeats: 2
-          delay_secs: 0.2
-  tv_center_volume_way_up:
-    alias: Center Volume Way Up
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeUp
-          device: 33807080
-          entity_id: remote.livingroom
-          num_repeats: 8
-          delay_secs: 0.2
-  tv_center_volume_way_down:
-    alias: Center Volume Way Down
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeDown
-          device: 33807080
-          entity_id: remote.livingroom
-          num_repeats: 8
-          delay_secs: 0.2
-  tv_center_mute:
-    alias: Center Mute
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: Mute
-          device: 33807080
-          entity_id: remote.livingroom
-  tv_center_power_down:
-    alias: Center Power Down
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: PowerOff
-          device: 33807080
-          entity_id: remote.livingroom
-          num_repeats: 5
-          delay_secs: 0.4
-  tv_center_power_up:
-    alias: Center Power Up
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: PowerOn
-          device: 33807080
-          entity_id: remote.livingroom
-          num_repeats: 5
-          delay_secs: 0.4
-  tv_sides_volume_up:
-    alias: Sides Volume Up
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeUp
-          device: 35189272
-          entity_id: remote.livingroom
-          num_repeats: 2
-          delay_secs: 0.2
-  tv_sides_volume_down:
-    alias: Sides Volume Down
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeDown
-          device: 35189272
-          entity_id: remote.livingroom
-          num_repeats: 2
-          delay_secs: 0.2
-  tv_sides_volume_way_up:
-    alias: Sides Volume Way Up
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeUp
-          device: 35189272
-          entity_id: remote.livingroom
-          num_repeats: 8
-          delay_secs: 0.2
-  tv_sides_volume_way_down:
-    alias: Sides Volume Way Down
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: VolumeDown
-          device: 35189272
-          entity_id: remote.livingroom
-          num_repeats: 8
-          delay_secs: 0.2
-  tv_sides_mute:
-    alias: Sides Mute
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: Mute
-          device: 35189272
-          entity_id: remote.livingroom
-  tv_sides_power_down:
-    alias: Sides Power Down
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: PowerOff
-          device: 35189272
-          entity_id: remote.livingroom
-          num_repeats: 5
-          delay_secs: 0.4
-  tv_sides_power_up:
-    alias: Sides Power Up
-    sequence:
-      - service: remote.send_command
-        data_template:
-          command: PowerOn
-          device: 35189272
-          entity_id: remote.livingroom
-          num_repeats: 5
-          delay_secs: 0.4
+restart_hass:
+  alias: Restart HomeAssistant
+  sequence:
+    - service: homeassistant.restart
+update_hass:
+  alias: Update HomeAssistant
+  sequence:
+    - service: shell_command.update_hass
+pull_github:
+  alias: Pull from Github
+  sequence:
+    - service: shell_command.pull_github
+reload_groups:
+  alias: Reload Groups
+  sequence:
+    - service: group.reload
+reload_automation:
+  alias: Reload Automation
+  sequence:
+    - service: automation.reload
+reload_core:
+  alias: Reload Core Config
+  sequence:
+    - service: homeassistant.reload_core_config
+tv_center_volume_up:
+  alias: Center Volume Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeUp
+        device: 33807080
+        entity_id: remote.livingroom
+        num_repeats: 2
+        delay_secs: 0.2
+tv_center_volume_down:
+  alias: Center Volume Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeDown
+        device: 33807080
+        entity_id: remote.livingroom
+        num_repeats: 2
+        delay_secs: 0.2
+tv_center_volume_way_up:
+  alias: Center Volume Way Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeUp
+        device: 33807080
+        entity_id: remote.livingroom
+        num_repeats: 8
+        delay_secs: 0.2
+tv_center_volume_way_down:
+  alias: Center Volume Way Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeDown
+        device: 33807080
+        entity_id: remote.livingroom
+        num_repeats: 8
+        delay_secs: 0.2
+tv_center_mute:
+  alias: Center Mute
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: Mute
+        device: 33807080
+        entity_id: remote.livingroom
+tv_center_power_down:
+  alias: Center Power Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: PowerOff
+        device: 33807080
+        entity_id: remote.livingroom
+        num_repeats: 5
+        delay_secs: 0.4
+tv_center_power_up:
+  alias: Center Power Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: PowerOn
+        device: 33807080
+        entity_id: remote.livingroom
+        num_repeats: 5
+        delay_secs: 0.4
+tv_sides_volume_up:
+  alias: Sides Volume Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeUp
+        device: 35189272
+        entity_id: remote.livingroom
+        num_repeats: 2
+        delay_secs: 0.2
+tv_sides_volume_down:
+  alias: Sides Volume Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeDown
+        device: 35189272
+        entity_id: remote.livingroom
+        num_repeats: 2
+        delay_secs: 0.2
+tv_sides_volume_way_up:
+  alias: Sides Volume Way Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeUp
+        device: 35189272
+        entity_id: remote.livingroom
+        num_repeats: 8
+        delay_secs: 0.2
+tv_sides_volume_way_down:
+  alias: Sides Volume Way Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: VolumeDown
+        device: 35189272
+        entity_id: remote.livingroom
+        num_repeats: 8
+        delay_secs: 0.2
+tv_sides_mute:
+  alias: Sides Mute
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: Mute
+        device: 35189272
+        entity_id: remote.livingroom
+tv_sides_power_down:
+  alias: Sides Power Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: PowerOff
+        device: 35189272
+        entity_id: remote.livingroom
+        num_repeats: 5
+        delay_secs: 0.4
+tv_sides_power_up:
+  alias: Sides Power Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        command: PowerOn
+        device: 35189272
+        entity_id: remote.livingroom
+        num_repeats: 5
+        delay_secs: 0.4

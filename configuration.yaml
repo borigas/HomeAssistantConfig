@@ -9,10 +9,6 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
 
-  script: !include scripts.yaml
-
-  automation: !include automations.yaml
-    
   customize:
     light.bedroom_ceiling_level:
       friendly_name: Bedroom Ceiling
@@ -62,6 +58,10 @@ homeassistant:
       emulated_hue: true
     script.tv_sides_power_up:
       emulated_hue: true
+
+script: !include scripts.yaml
+
+automation: !include automations.yaml
 
 zone:
   name: Work
