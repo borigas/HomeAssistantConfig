@@ -64,6 +64,8 @@ homeassistant:
       emulated_hue: true
     script.tv_living_room_off:
       emulated_hue: true
+    script.tv_all_off:
+      emulated_hue: true
 
 script: !include scripts.yaml
 
