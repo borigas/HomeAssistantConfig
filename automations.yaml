@@ -1,4 +1,5 @@
-- alias: Leave Home
+- id : leave_home
+  alias: Leave Home
   trigger:
     platform: zone
     entity_id: device_tracker.ben
@@ -8,7 +9,8 @@
     - service: notify.pushbullet
       data: 
         message: "Ben left home"
-- alias: Arrive Home
+- id: arrive_home
+  alias: Arrive Home
   trigger:
     platform: zone
     entity_id: device_tracker.ben
@@ -19,7 +21,8 @@
       data: 
         message: "Ben arrived home"
 
-- alias: Britt Left Home
+- id: britt_left_home
+  alias: Britt Left Home
   trigger:
     platform: zone
     entity_id: device_tracker.britt
@@ -29,7 +32,8 @@
     - service: notify.pushbullet
       data:
         message: "Britt left home"
-- alias: Britt Arrived Home
+- id: britt_arrived_home
+  alias: Britt Arrived Home
   trigger:
     platform: zone
     entity_id: device_tracker.britt
@@ -40,7 +44,8 @@
       data:
         message: "Britt arrived home"
       
-- alias: Leave Work
+- id: leave_work
+  alias: Leave Work
   trigger:
     platform: zone
     entity_id: device_tracker.ben
@@ -50,7 +55,8 @@
     - service: notify.pushbullet
       data: 
         message: "Ben left work"
-- alias: Arrive at Work
+- id: arrive_at_work
+  alias: Arrive at Work
   trigger:
     platform: zone
     entity_id: device_tracker.ben
@@ -61,7 +67,8 @@
       data: 
         message: "Ben arrived at work"
 
-- alias: Wake Up Dim
+- id: wake_up_dim
+  alias: Wake Up Dim
   trigger:
     platform: time
     hours: 7
@@ -86,7 +93,8 @@
     data:
       brightness: 50
 
-- alias: Wake Up Medium
+- id: wake_up_medium
+  alias: Wake Up Medium
   trigger:
     platform: time
     hours: 7
@@ -111,7 +119,8 @@
     data:
       brightness: 100
 
-- alias: Wake Up Bright
+- id: wake_up_bright
+  alias: Wake Up Bright
   trigger:
     platform: time
     hours: 8
@@ -136,7 +145,8 @@
     data:
       brightness: 200
 
-- alias: Wake Up Over
+- id: wake_up_over
+  alias: Wake Up Over
   trigger:
     platform: time
     hours: 9
@@ -158,8 +168,9 @@
   action:
     service: light.turn_off
     entity_id: group.bedroom_alarm_lights
-    
-- alias: Enable todays alarm
+ 
+- id: enable_todays_alarm   
+  alias: Enable todays alarm
   trigger:
     platform: time
     hours: 9
@@ -172,8 +183,9 @@
   action:
     service: input_boolean.turn_on
     entity_id: input_boolean.alarm_lights_today
-    
-- alias: Disable todays alarm
+ 
+- id: disable_todays_alarm
+  alias: Disable todays alarm
   trigger:
     platform: time
     hours: 9
@@ -187,7 +199,8 @@
     service: input_boolean.turn_off
     entity_id: input_boolean.alarm_lights_today
 
-- alias: Garage Open
+- id: garage_open
+  alias: Garage Open
   trigger:
     platform: state
     entity_id: cover.bens_garage_door, cover.britts_garage_door
