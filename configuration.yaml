@@ -378,6 +378,7 @@ group:
       - script.reload_groups
       - script.reload_core
       - input_boolean.alarm_lights
+      - input_boolean.alarm_lights_today
   Weather:
     view: yes
     entities:
