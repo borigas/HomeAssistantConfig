@@ -296,9 +296,15 @@ group:
       - sensor.dark_sky_daily_low_apparent_temperature
       - sensor.dark_sky_daily_high_apparent_temperature
       - sensor.dark_sky_precip_probability
+      - group.lights
+      - light.bedroom_ceiling_level
+      - switch.dlink_smart_plug_w215
+  lights:
+    name: Lights
+    icon: mdi:lightbulb
+    entities:
       - light.bedroom_ceiling_level
       - switch.kitchen_ceiling_switch
-      - switch.dlink_smart_plug_w215
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
