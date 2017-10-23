@@ -14,6 +14,9 @@ homeassistant:
       friendly_name: Bedroom Ceiling
       icon: mdi:hotel
       emulated_hue_name: Bedroom
+    switch.kitchen_ceiling_switch:
+      friendly_name: Kitchen Ceiling
+      icon: mdi:stove
     sensor.dark_sky_apparent_temperature:
       friendly_name: Temp
     sensor.dark_sky_daily_low_apparent_temperature:
@@ -294,12 +297,18 @@ group:
       - sensor.dark_sky_daily_high_apparent_temperature
       - sensor.dark_sky_precip_probability
       - light.bedroom_ceiling_level
+      - switch.kitchen_ceiling_switch
       - switch.dlink_smart_plug_w215
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
     entities:
       - light.bedroom_ceiling_level
+  kitchen_lights:
+    name: Kitchen Lights
+    icon: mdi:lightbulb
+    entities:
+      - switch.kitchen_ceiling_switch
   speedtest:
     name: Speedtest
     entities:
