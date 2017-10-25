@@ -17,6 +17,9 @@ homeassistant:
     switch.kitchen_ceiling_switch:
       friendly_name: Kitchen Ceiling
       icon: mdi:stove
+    switch.living_room_switch:
+      friendly_name: Living Room Lamps
+      icon: mdi:readability
     sensor.dark_sky_apparent_temperature:
       friendly_name: Temp
     sensor.dark_sky_daily_low_apparent_temperature:
@@ -34,7 +37,7 @@ homeassistant:
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
     script.tv_center_volume_up:
-      emulated_hue: true
+      emulated_hue_: true
     script.tv_center_volume_down:
       emulated_hue: true
     script.tv_center_volume_way_up:
@@ -305,6 +308,7 @@ group:
     entities:
       - light.bedroom_ceiling_level
       - switch.kitchen_ceiling_switch
+      - switch.living_room_switch
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
