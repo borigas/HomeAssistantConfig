@@ -95,6 +95,7 @@ device_tracker:
 #sun:
 
 sensor:
+  - platform: uptime
   # Prediction of weather
   - platform: darksky
     api_key: !secret forecast_api_key
