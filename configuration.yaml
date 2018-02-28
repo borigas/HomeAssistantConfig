@@ -281,11 +281,6 @@ notify:
   api_key: !secret pushbullet_api_key
   name: pushbullet
 
-
-shell_command:
-  update_hass: /home/pi/HomeAssistantConfig/update.sh
-  pull_github: /home/pi/HomeAssistantConfig/git_pull.sh
-
 group:
   default_view:
     view: yes
