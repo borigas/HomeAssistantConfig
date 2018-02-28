@@ -248,6 +248,7 @@ notify:
 
 group:
   default_view:
+    name: Home
     view: yes
     entities:
       - updater.updater
