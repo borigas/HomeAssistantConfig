@@ -337,12 +337,6 @@ group:
       - sensor.dark_sky_daily_summary
   Home Assistant:
     entities:
-      - script.restart_hass
-      - script.update_hass
-      - script.pull_github
-      - script.reload_automation
-      - script.reload_groups
-      - script.reload_core
       - input_boolean.alarm_lights
       - input_boolean.alarm_lights_today
   Weather:
