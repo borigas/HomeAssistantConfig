@@ -111,8 +111,9 @@ mqtt:
 #  port: 14782
 #  username: HomeAssistant
 #  password: !secret mqtt_password
-  broker: 127.0.0.1
-  port: 1883
+#  broker: 127.0.0.1
+#  port: 1883
+  broker: core-mosquitto
 
 
 device_tracker:
