@@ -36,42 +36,6 @@ homeassistant:
       friendly_name: Today
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
-    script.tv_center_volume_up:
-      emulated_hue_: true
-    script.tv_center_volume_down:
-      emulated_hue: true
-    script.tv_center_volume_way_up:
-      emulated_hue: true
-    script.tv_center_volume_way_down:
-      emulated_hue: true
-    script.tv_center_mute:
-      emulated_hue: true
-    script.tv_center_power_down:
-      emulated_hue: true
-    script.tv_center_power_up:
-      emulated_hue: true
-    script.tv_sides_volume_up:
-      emulated_hue: true
-    script.tv_sides_volume_down:
-      emulated_hue: true
-    script.tv_sides_volume_way_up:
-      emulated_hue: true
-    script.tv_sides_volume_way_down:
-      emulated_hue: true
-    script.tv_sides_mute:
-      emulated_hue: true
-    script.tv_sides_power_down:
-      emulated_hue: true
-    script.tv_sides_power_up:
-      emulated_hue: true
-    script.tv_sides_off:
-      emulated_hue: true
-    script.tv_center_off:
-      emulated_hue: true
-    script.tv_living_room_off:
-      emulated_hue: true
-    script.tv_all_off:
-      emulated_hue: true
 
 script: !include scripts.yaml
 
@@ -105,6 +69,7 @@ emulated_hue:
     - light
     - input_boolean
     - media_player
+    - script
   
 mqtt:
 #  broker: m12.cloudmqtt.com
