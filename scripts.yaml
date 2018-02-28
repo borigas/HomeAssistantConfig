@@ -1,27 +1,3 @@
-restart_hass:
-  alias: Restart HomeAssistant
-  sequence:
-  - service: homeassistant.restart
-update_hass:
-  alias: Update HomeAssistant
-  sequence:
-  - service: shell_command.update_hass
-pull_github:
-  alias: Pull from Github
-  sequence:
-  - service: shell_command.pull_github
-reload_groups:
-  alias: Reload Groups
-  sequence:
-  - service: group.reload
-reload_automation:
-  alias: Reload Automation
-  sequence:
-  - service: automation.reload
-reload_core:
-  alias: Reload Core Config
-  sequence:
-  - service: homeassistant.reload_core_config
 tv_center_volume_up:
   alias: Center Volume Up
   sequence:
