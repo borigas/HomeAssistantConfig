@@ -108,6 +108,7 @@ device_tracker:
 
 sensor:
   - platform: uptime
+    unit_of_measurement: hours
   # Prediction of weather
   - platform: darksky
     api_key: !secret forecast_api_key
