@@ -12,3 +12,6 @@ deps/
 */__pycache__/
 *.save
 .uuid
+*.xml
+*.json
+*.conf
