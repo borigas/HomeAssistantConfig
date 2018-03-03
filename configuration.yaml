@@ -228,7 +228,7 @@ input_boolean:
     icon: mdi:alarm
   alarm_lights_today:
     name: Today's Alarm
-    initial: off
+    initial: on
 
 switch:
   platform: dlink
