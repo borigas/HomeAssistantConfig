@@ -15,3 +15,4 @@ deps/
 *.xml
 *.json
 *.conf
+.spotify-token-cache
