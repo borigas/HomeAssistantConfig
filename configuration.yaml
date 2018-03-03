@@ -57,6 +57,8 @@ zone 2:
 
 http:
   api_password: !secret http_password
+  base_url: !secret base_url
+  cors_allowed_origins: !secret base_url
 #  ssl_certificate: !secret ssl_certificate
 #  ssl_key: !secret ssl_key
   server_port: 8123
@@ -314,6 +316,7 @@ group:
       - group.center_tv
       - group.side_tvs
       - media_player.basement_chromecast
+      - media_player.spotify
   center_tv:
     name: Center TV
     entities:
