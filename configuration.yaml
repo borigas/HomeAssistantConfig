@@ -83,7 +83,49 @@ google_assistant:
     - switch
     - light
     - input_boolean
-    - script
+  entity_config:
+    script.tv_sides_volume_up:
+      name: Side Volume Up
+      expose: true
+    script.tv_sides_volume_down:
+      name: Side Volume Down
+      expose: true
+    script.tv_sides_volume_way_up:
+      name: Raise Side Volume
+      expose: true
+    script.tv_sides_volume_way_down:
+      name: Lower Side Volume
+      expose: true
+    script.tv_sides_mute:
+      name: Mute Sides
+      expose: true
+    script.tv_center_volume_up:
+      name: Center Volume Up
+      expose: true
+    script.tv_center_volume_down:
+      name: Center Volume Down
+      expose: true
+    script.tv_center_volume_way_up:
+      name: Raise Center Volume
+      expose: true
+    script.tv_center_volume_way_down:
+      name: Lower Center Volume
+      expose: true
+    script.tv_center_mute:
+      name: Mute Center
+      expose: true
+    light.center_tv:
+      aliases:
+        - Center TV
+        - Center Power Down
+      type: switch
+    light.side_tvs:
+      aliases:
+        - Side TVs
+        - Sides Power Down
+      type: switch
+    light.living_room_tvs:
+      type: switch
   
 mqtt:
 #  broker: m12.cloudmqtt.com
@@ -231,10 +273,44 @@ input_boolean:
     initial: on
 
 switch:
-  platform: dlink
-  host: http://192.168.1.83
-  username: !secret dlink_user
-  password: !secret dlink_password
+  - platform: dlink
+    host: http://192.168.1.83
+    username: !secret dlink_user
+    password: !secret dlink_password
+
+light:
+  - platform: template
+    lights:
+      center_tv:
+        friendly_name: "Center TV"
+        turn_on:
+          service: script.turn_on
+          data:
+            entity_id: script.tv_center_power_up
+        turn_off:
+          service: script.turn_on
+          data:
+            entity_id: script.tv_center_off
+      side_tvs:
+        friendly_name: "Side TVs"
+        turn_on:
+          service: script.turn_on
+          data:
+            entity_id: script.tv_sides_power_up
+        turn_off:
+          service: script.turn_on
+          data:
+            entity_id: script.tv_sides_off
+      living_room_tvs:
+        friendly_name: "Living Room TVs"
+        turn_on:
+          service: script.turn_on
+          data:
+            entity_id: script.tv_center_power_up
+        turn_off:
+          service: script.turn_on
+          data:
+            entity_id: script.living_room_off
     
 cover:
   - platform: mqtt
