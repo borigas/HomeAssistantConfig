@@ -1,12 +1,6 @@
 import appdaemon.plugins.hass.hassapi as hass
 import datetime
 
-#
-# Hellow World App
-#
-# Args:
-#
-
 class Alarm(hass.Hass):
   HOUR_ENTITY = "input_number.alarm_hour"
   MINUTE_ENTITY = "input_number.alarm_minute"
@@ -20,8 +14,7 @@ class Alarm(hass.Hass):
   ALARM_END_BRIGHTNESS = 200
 
   def initialize(self):
-    self.log("Hello from AppDaemon Alarm")
-    self.log("You are now ready to run Apps!")
+    self.log("Initializing AppDaemon Alarm")
 
     self.timeListener = None
     self.brightness = 0
@@ -44,11 +37,9 @@ class Alarm(hass.Hass):
 
     hour = self.getStateAsInt(Alarm.HOUR_ENTITY)
     minute = self.getStateAsInt(Alarm.MINUTE_ENTITY)
-    self.log(f"Configured Time: {hour}:{minute}")
     time = datetime.time(hour, minute, 0)
-    self.log(f"Creating listener for {time}")
     self.timeListener = self.run_daily(self.startAlarmTimerCallback, time)
-    self.log("Listener created")
+    self.log(f"Created listener for {time}")
 
   def getStateAsInt(self, entity):
     rawState = self.get_state(entity)
