@@ -9,7 +9,7 @@ home-assistant_v2.db-shm
 home-assistant_v2.db-wal
 pyozw.sqlite
 deps/
-*/__pycache__/
+**/__pycache__/
 *.save
 .uuid
 *.xml
