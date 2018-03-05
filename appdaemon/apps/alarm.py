@@ -75,7 +75,7 @@ class Alarm(hass.Hass):
     self.run_in(self.updateBrightnessCallback, updateInterval)
 
   def updateBrightnessCallback(self, kwargs):
-    if(self.getIsAlarmEnabled()):
+    if(self.getIsAlarmEnabled() and self.brightness <= Alarm.ALARM_END_BRIGHTNESS):
       self.increaseBrightness()
       self.startBrightnessTimer()
 
@@ -90,7 +90,7 @@ class Alarm(hass.Hass):
     if(self.getIsAlarmEnabled()):
       self.turn_off(Alarm.ALARM_ENTITY)
 
-    futureAlarmState = get_state(Alarm.FUTURE_TOGGLE)
+    futureAlarmState = self.get_state(Alarm.FUTURE_TOGGLE)
     self.set_state(Alarm.DAY_TOGGLE, state = futureAlarmState)
     self.log(f"Alarm reset to {futureAlarmState} and {Alarm.ALARM_ENTITY} set to off")
 
