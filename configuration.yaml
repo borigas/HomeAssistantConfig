@@ -84,6 +84,10 @@ google_assistant:
     - light
     - input_boolean
   entity_config:
+    light.bedroom_ceiling_level:
+      aliases:
+        Bedroom Ceiling
+        Bedroom
     script.tv_sides_volume_up:
       name: Side Volume Up
       expose: true
