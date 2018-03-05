@@ -270,11 +270,24 @@ media_player:
 input_boolean:
   alarm_lights:
     name: Should Alarm Lights
-    initial: on
-    icon: mdi:alarm
+    icon: mdi:alarm-check
   alarm_lights_today:
     name: Today's Alarm
-    initial: on
+    icon: mdi:alarm-check
+
+input_number:
+  alarm_hour:
+    name: Hour
+    icon: mdi:timer
+    min: 0
+    max: 23
+    step: 1
+  alarm_minute:
+    name: Minute
+    icon: mdi:timer
+    min: 0
+    max: 55
+    step: 5
 
 switch:
   - platform: dlink
@@ -442,6 +455,8 @@ group:
     entities:
       - input_boolean.alarm_lights
       - input_boolean.alarm_lights_today
+      - input_number.alarm_hour
+      - input_number.alarm_minute
   Weather:
     view: yes
     entities:
