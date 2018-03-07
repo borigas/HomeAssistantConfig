@@ -52,3 +52,6 @@ media_player.kitchen_speaker:
 climate.hallway_nest:
   platform: nest
   unique_id: 52xWPCrU7nhZDS_MzLmRB9kOMy7X3Xdj
+media_player.bedroom_speaker:
+  platform: cast
+  unique_id: 3e1c1657-92e9-5372-8986-826bfb791373
