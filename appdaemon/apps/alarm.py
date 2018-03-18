@@ -78,6 +78,7 @@ class Alarm(hass.Hass):
 
   def startAlarmTimerCallback(self, kwargs):
     self.log("Timer callback triggered")
+    self.isAlarmFinished = False
 
     if(self.getIsAlarmEnabled()):
       self.log("Alarms enabled. Starting")
