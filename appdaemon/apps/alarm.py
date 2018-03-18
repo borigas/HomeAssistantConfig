@@ -73,7 +73,9 @@ class Alarm(hass.Hass):
     return isOn
 
   def getIsAlarmEnabled(self):
-    isEnabled = self.getStateAsBool(Alarm.DAY_TOGGLE) and not self.isAlarmFinished
+    # Weekday is 0-6 starting on Mon
+    isWeekday = datetime.today().weekday() <= 4
+    isEnabled = isWeekday and self.getStateAsBool(Alarm.DAY_TOGGLE) and not self.isAlarmFinished
     return isEnabled
 
   def startAlarmTimerCallback(self, kwargs):
