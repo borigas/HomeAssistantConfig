@@ -142,14 +142,10 @@ mqtt:
 
 
 device_tracker:
-  - platform: netgear
+  - platform: ddwrt
     host: 192.168.1.1
     username: admin
-    password: !secret netgear_password
-    port: 80
-    track_new_devices: False
-    interval_seconds: 60
-    consider_home: 00:03:00
+    password: !secret router_password
 
 # Track the sun
 #sun:
