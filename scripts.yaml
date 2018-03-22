@@ -163,3 +163,27 @@ tv_all_off:
   alias: TVs
   sequence:
   - service: script.tv_living_room_off
+walkup_music:
+  alias: Walkup Music
+  sequence:
+  - service: logbook.log
+    data_template:
+      name: "Walkup music starting"
+      message: "Playlist {{playlist}}"
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.spotify
+      source: Living Room Echo Dot
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.spotify
+      media_content_id: "{{playlist|default('spotify:user:borigas:playlist:1jBiclFnkbb1kesKneqyL8')}}"
+      media_content_type: playlist
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.spotify
+      volume_level: 0.75
+  - delay: 00:00:40
+  - service: media_player.media_pause
+    data:
+      entity_id: media_player.spotify

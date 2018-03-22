@@ -79,3 +79,46 @@
     - service: notify.pushbullet
       data_template:
         message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state }} for {{ trigger.for }}'
+
+- id: arrive_home_living_room_lights
+  alias: Arrive Home Living Room Lights
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: and
+    conditions:
+    - condition: sun
+      after: sunset
+      after_offset: "-0:30:00"
+    - condition: time
+      before: "23:59:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.living_room_switch
+
+- id: britt_walkup_music
+  alias: Britt Walkup Music
+  trigger:
+    platform: state
+    entity_id: device_tracker.britt
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: script.walkup_music
+    data:
+      playlist: spotify:user:borigas:playlist:4SJmyv4yZ5NdpJ30XeJ3AA
+
+- id: ben_walkup_music
+  alias: Ben Walkup Music
+  trigger:
+    platform: state
+    entity_id: device_tracker.ben
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: script.walkup_music
+    data:
+      playlist: spotify:user:borigas:playlist:1jBiclFnkbb1kesKneqyL8
