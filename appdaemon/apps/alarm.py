@@ -74,7 +74,7 @@ class Alarm(hass.Hass):
 
   def getIsAlarmEnabled(self):
     # Weekday is 0-6 starting on Mon
-    isWeekday = datetime.today().weekday() <= 4
+    isWeekday = datetime.datetime.today().weekday() <= 4
     isEnabled = isWeekday and self.getStateAsBool(Alarm.DAY_TOGGLE) and not self.isAlarmFinished
     return isEnabled
 
