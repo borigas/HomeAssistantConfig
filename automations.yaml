@@ -67,6 +67,36 @@
       data: 
         message: "Ben arrived at work"
 
+- id: enable_todays_alarm
+  alias: Enable todays alarm
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_lights
+    state: 'on'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.alarm_lights_today
+
+- id: disable_todays_alarm
+  alias: Disable todays alarm
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_lights
+    state: 'off'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.alarm_lights_today
+
 - id: garage_open
   alias: Garage Open
   trigger:
