@@ -114,7 +114,7 @@
   alias: Arrive Home Living Room Lights
   trigger:
     platform: state
-    entity_id: group.all_devices
+    entity_id: group.our_devices
     from: 'not_home'
     to: 'home'
   condition:

@@ -461,3 +461,8 @@ group:
     view: yes
     entities:
       - group.home_assistant
+  our_devices:
+    name: Our Devices
+    entities:
+      - device_tracker.ben
+      - device_tracker.britt
