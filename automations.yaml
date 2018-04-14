@@ -1,4 +1,4 @@
-- id : leave_home
+- id: leave_home
   alias: Leave Home
   trigger:
     platform: zone
@@ -6,9 +6,9 @@
     zone: zone.home
     event: leave
   action:
-    - service: notify.pushbullet
-      data: 
-        message: "Ben left home"
+  - service: notify.pushbullet
+    data:
+      message: Ben left home
 - id: arrive_home
   alias: Arrive Home
   trigger:
@@ -17,10 +17,9 @@
     zone: zone.home
     event: enter
   action:
-    - service: notify.pushbullet
-      data: 
-        message: "Ben arrived home"
-
+  - service: notify.pushbullet
+    data:
+      message: Ben arrived home
 - id: britt_left_home
   alias: Britt Left Home
   trigger:
@@ -29,9 +28,9 @@
     zone: zone.home
     event: leave
   action:
-    - service: notify.pushbullet
-      data:
-        message: "Britt left home"
+  - service: notify.pushbullet
+    data:
+      message: Britt left home
 - id: britt_arrived_home
   alias: Britt Arrived Home
   trigger:
@@ -40,10 +39,9 @@
     zone: zone.home
     event: enter
   action:
-    - service: notify.pushbullet
-      data:
-        message: "Britt arrived home"
-      
+  - service: notify.pushbullet
+    data:
+      message: Britt arrived home
 - id: leave_work
   alias: Leave Work
   trigger:
@@ -52,9 +50,9 @@
     zone: zone.work
     event: leave
   action:
-    - service: notify.pushbullet
-      data: 
-        message: "Ben left work"
+  - service: notify.pushbullet
+    data:
+      message: Ben left work
 - id: arrive_at_work
   alias: Arrive at Work
   trigger:
@@ -63,10 +61,9 @@
     zone: zone.work
     event: enter
   action:
-    - service: notify.pushbullet
-      data: 
-        message: "Ben arrived at work"
-
+  - service: notify.pushbullet
+    data:
+      message: Ben arrived at work
 - id: enable_todays_alarm
   alias: Enable todays alarm
   trigger:
@@ -81,7 +78,6 @@
   action:
     service: input_boolean.turn_on
     entity_id: input_boolean.alarm_lights_today
-
 - id: disable_todays_alarm
   alias: Disable todays alarm
   trigger:
@@ -96,54 +92,51 @@
   action:
     service: input_boolean.turn_off
     entity_id: input_boolean.alarm_lights_today
-
 - id: garage_open
   alias: Garage Open
   trigger:
     platform: state
     entity_id: cover.bens_garage_door, cover.britts_garage_door
-    to: 'open'
+    to: open
     for:
       minutes: 1
   action:
-    - service: notify.pushbullet
-      data_template:
-        message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state }} for {{ trigger.for }}'
-
+  - service: notify.pushbullet
+    data_template:
+      message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state
+        }} for {{ trigger.for }}'
 - id: arrive_home_living_room_lights
   alias: Arrive Home Living Room Lights
   trigger:
     platform: state
     entity_id: group.our_devices
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   condition:
     condition: sun
     after: sunset
-    after_offset: "-2:00:00"
+    after_offset: '-2:00:00'
   action:
     service: switch.turn_on
     entity_id: switch.living_room_switch
-
 - id: britt_walkup_music
   alias: Britt Walkup Music
   trigger:
     platform: state
     entity_id: device_tracker.britt
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   action:
     service: script.walkup_music
     data:
       playlist: spotify:user:borigas:playlist:4SJmyv4yZ5NdpJ30XeJ3AA
-
 - id: ben_walkup_music
   alias: Ben Walkup Music
   trigger:
     platform: state
     entity_id: device_tracker.ben
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   action:
     service: script.walkup_music
     data:
