@@ -170,7 +170,7 @@ sensor:
       #- dew_point
       - wind_speed
       - wind_bearing
-      #- cloud_cover
+      - cloud_cover
       - humidity
       #- pressure
       #- visibility
