@@ -148,3 +148,16 @@
     service: script.walkup_music
     data:
       playlist: spotify:user:borigas:playlist:1jBiclFnkbb1kesKneqyL8
+      
+- action:
+  - data:
+      entity_id: group.lights
+    service: homeassistant.turn_off
+  alias: No One Home Lights Off
+  condition: []
+  id: '1523677900676'
+  trigger:
+  - entity_id: group.our_devices
+    from: home
+    platform: state
+    to: not_home
