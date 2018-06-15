@@ -55,3 +55,6 @@ climate.hallway_nest:
 media_player.bedroom_speaker:
   platform: cast
   unique_id: 3e1c1657-92e9-5372-8986-826bfb791373
+media_player.home_group:
+  platform: cast
+  unique_id: b8debee0-a52c-4d77-bb1c-46a5d67374df
