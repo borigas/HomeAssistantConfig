@@ -447,12 +447,21 @@ group:
       - sensor.dark_sky_summary
       - sensor.dark_sky_hourly_summary
       - sensor.dark_sky_daily_summary
-  Home Assistant:
+  Alarms:
     entities:
       - input_boolean.alarm_lights
       - input_boolean.alarm_lights_today
       - input_number.alarm_hour
       - input_number.alarm_minute
+  Automations:
+    entities:
+      - automation.arrive_home_living_room_lights
+      - automation.ben_walkup_music
+      - automation.britt_walkup_music
+      - automation.disable_todays_alarm
+      - automation.enable_todays_alarm
+      - automation.garage_open
+      - automation.no_one_home_lights_off
   Weather:
     view: yes
     entities:
@@ -460,7 +469,8 @@ group:
   Admin:
     view: yes
     entities:
-      - group.home_assistant
+      - group.alarms
+      - group.automations
   our_devices:
     name: Our Devices
     entities:
