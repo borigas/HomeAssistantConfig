@@ -139,6 +139,7 @@ mqtt:
 #  broker: 127.0.0.1
 #  port: 1883
   broker: core-mosquitto
+  discovery: true
 
 
 device_tracker:
