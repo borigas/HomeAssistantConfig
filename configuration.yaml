@@ -122,14 +122,13 @@ google_assistant:
       aliases:
         - Center TV
         - Center Power Down
-      type: switch
     light.side_tvs:
       aliases:
         - Side TVs
         - Sides Power Down
-      type: switch
     light.living_room_tvs:
-      type: switch
+      aliases:
+        - Living Room TVs
   
 mqtt:
 #  broker: m12.cloudmqtt.com
