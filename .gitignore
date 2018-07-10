@@ -16,3 +16,4 @@ deps/
 *.json
 *.conf
 .spotify-token-cache
+.storage/
