@@ -1,108 +1,140 @@
 switch.hallway_plug_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126614528
 light.bedroom_ceiling_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 4-72057594109853697
 sensor.hallway_plug_energy:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126827522
 sensor.hallway_plug_previous_reading:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126827538
 sensor.hallway_plug_power:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126827650
 sensor.hallway_plug_voltage:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126827778
 sensor.hallway_plug_current:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126827842
 switch.kitchen_ceiling_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594143391744
 switch.living_room_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160168960
 media_player.surround_chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: d64d7798-5f88-4ea2-e368-464e431d0158
 media_player.kitchen_chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 853769e2-afe6-25be-29f4-22ae010ff4ff
 media_player.living_room_home:
+  config_entry_id:
   name:
   platform: cast
   unique_id: be104125-54bb-2b1b-c3e7-4f4930c726c1
 media_player.basement_chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 17e7f6bf-5143-b638-3f29-0859b8052b2f
 media_player.right_chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 146debd1-6bbb-cee6-70b4-f693f9e3cea5
 media_player.left_chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 21b641fb-5014-9044-9fb2-8680a4733c4b
 media_player.center_chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 08b9f870-8710-5e45-2374-af7fb273816e
 media_player.kitchen_speaker:
+  config_entry_id:
   name:
   platform: cast
   unique_id: ee560d9a-b63b-5eae-dec2-61086fb028bb
 climate.hallway_nest:
+  config_entry_id:
   name:
   platform: nest
   unique_id: 52xWPCrU7nhZDS_MzLmRB9kOMy7X3Xdj
 media_player.bedroom_speaker:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 3e1c1657-92e9-5372-8986-826bfb791373
 media_player.home_group:
+  config_entry_id:
   name:
   platform: cast
   unique_id: b8debee0-a52c-4d77-bb1c-46a5d67374df
 zwave.aeotec_zw090_zstick_gen5_us:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-1
 zwave.bedroom_ceiling:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-4
 zwave.hank_hkzwso01_smart_plug:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-5
 zwave.zooz_zen23_toggle_switch_v2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-6
 zwave.aeotec_dsc26103_micro_switch_2nd_edition:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-7
 media_player.galaxy_s8:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 6ca6a6618c7bfad0-com-plexapp-android
 media_player.lg_g3:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 27a0093f02065ed6-com-plexapp-android
+media_player.kfsuwi:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: 55c765a681f7b564-com-plexapp-android
