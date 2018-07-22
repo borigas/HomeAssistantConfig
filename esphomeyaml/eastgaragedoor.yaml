@@ -1,0 +1,61 @@
+esphomeyaml:
+  name: EastGarageDoor
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  manual_ip:
+    static_ip: 192.168.1.42
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+
+mqtt:
+  broker: '192.168.1.12'
+  username: ''
+  password: ''
+
+# Enable logging
+logger:
+
+ota:
+  password: !secret ota_password
+
+switch:
+  - platform: gpio
+    id: GarageRelay2
+    name: "GarageRelay2"
+    pin: D0
+
+sensor:
+  - platform: ultrasonic
+    id: GarageSensor2
+    name: "GarageSensor2"
+    trigger_pin: D1
+    echo_pin: D2
+    timeout_meter: 5
+    update_interval: 5s
+
+cover:
+  - platform: template
+    name: "East Garage Door"
+    lambda: >-
+      if(id(GarageSensor2).value <= 1.3) {
+        return cover::COVER_OPEN;
+      } else {
+        return cover::COVER_CLOSED;
+      }
+    open_action:
+      - switch.turn_on:
+          id: GarageRelay2
+      - delay: 100ms
+      - switch.turn_off:
+          id: GarageRelay2
+    close_action:
+      - switch.turn_on:
+          id: GarageRelay2
+      - delay: 100ms
+      - switch.turn_off:
+          id: GarageRelay2
