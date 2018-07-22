@@ -203,17 +203,15 @@ sensor:
       - 45
       - 55
   - platform: mqtt
-    state_topic: "home/garage/door/c0928600"
+    state_topic: "westgaragedoor/sensor/garagesensor/state"
     name: "Britt's Garage Door Raw"
     qos: 0
     unit_of_measurement: "ft"
-    value_template: '{{ value_json.Distance }}'
   - platform: mqtt
-    state_topic: "home/garage/door/4413c000"
+    state_topic: "eastgaragedoor/sensor/garagesensor/state"
     name: "Ben's Garage Door Raw"
     qos: 0
     unit_of_measurement: "ft"
-    value_template: '{{ value_json.Distance }}'
 
 # View all events in a logbook
 logbook:
@@ -324,28 +322,6 @@ light:
           service: script.turn_on
           data:
             entity_id: script.living_room_off
-    
-cover:
-  - platform: mqtt
-    name: "Britt's Garage Door"
-    state_topic: "home/garage/door/c0928600"
-    command_topic: "home/garage/door/c0928600/set"
-    optimistic: false
-    value_template: '{{ value_json.Status }}'
-    payload_open: "open"
-    payload_close: "close"
-    state_open: "open"
-    state_closed: "closed"
-  - platform: mqtt
-    name: "Ben's Garage Door"
-    state_topic: "home/garage/door/4413c000"
-    command_topic: "home/garage/door/4413c000/set"
-    optimistic: false
-    value_template: '{{ value_json.Status }}'
-    payload_open: "open"
-    payload_close: "close"
-    state_open: "open"
-    state_closed: "closed"
 
 notify:
 #  platform: html5
@@ -433,8 +409,8 @@ group:
   garage:
     name: Garage
     entities:
-      - cover.bens_garage_door
-      - cover.britts_garage_door
+      - cover.west_garage_door
+      - cover.east_garage_door
       - sensor.bens_garage_door_raw
       - sensor.britts_garage_door_raw
   Weather Summary:
