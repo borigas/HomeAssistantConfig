@@ -58,12 +58,12 @@ cover:
     open_action:
       - switch.turn_on:
           id: GarageRelay1
-      - delay: 100ms
+      - delay: 200ms
       - switch.turn_off:
           id: GarageRelay1
     close_action:
       - switch.turn_on:
           id: GarageRelay1
-      - delay: 100ms
+      - delay: 200ms
       - switch.turn_off:
           id: GarageRelay1
