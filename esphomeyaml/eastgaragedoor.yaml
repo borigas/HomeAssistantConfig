@@ -25,14 +25,14 @@ ota:
 
 switch:
   - platform: gpio
-    id: GarageRelay2
-    name: "GarageRelay2"
+    id: GarageRelay
+    name: "GarageRelay"
     pin: D1
 
 sensor:
   - platform: ultrasonic
-    id: GarageSensor2
-    name: "GarageSensor2"
+    id: GarageSensor
+    name: "GarageSensor"
     trigger_pin: D3
     echo_pin: D2
     timeout_time: 100ms
@@ -50,20 +50,20 @@ cover:
   - platform: template
     name: "East Garage Door"
     lambda: >-
-      if(id(GarageSensor2).value <= 4) {
+      if(id(GarageSensor).value <= 4) {
         return cover::COVER_OPEN;
       } else {
         return cover::COVER_CLOSED;
       }
     open_action:
       - switch.turn_on:
-          id: GarageRelay2
+          id: GarageRelay
       - delay: 200ms
       - switch.turn_off:
-          id: GarageRelay2
+          id: GarageRelay
     close_action:
       - switch.turn_on:
-          id: GarageRelay2
+          id: GarageRelay
       - delay: 200ms
       - switch.turn_off:
-          id: GarageRelay2
+          id: GarageRelay
