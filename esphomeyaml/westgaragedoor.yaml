@@ -1,5 +1,5 @@
 esphomeyaml:
-  name: WestGarageDoor
+  name: westgaragedoor
   platform: ESP8266
   board: nodemcuv2
 
@@ -27,15 +27,15 @@ switch:
   - platform: gpio
     id: GarageRelay1
     name: "GarageRelay1"
-    pin: D0
+    pin: D1
 
 sensor:
   - platform: ultrasonic
     id: GarageSensor1
     name: "GarageSensor1"
-    trigger_pin: D1
+    trigger_pin: D3
     echo_pin: D2
-    timeout_meter: 5
+    timeout_time: 100ms
     update_interval: 1s
     unit_of_measurement: "ft"
     filters:
@@ -44,7 +44,7 @@ sensor:
           window_size: 5
           send_every: 5
       - delta: 1
-      - heartbeat: 15m
+      - heartbeat: 60s
 
 cover:
   - platform: template
