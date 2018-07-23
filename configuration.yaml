@@ -441,6 +441,7 @@ group:
       - automation.disable_todays_alarm
       - automation.enable_todays_alarm
       - automation.garage_open
+      - automation.garage_open_long_time
       - automation.no_one_home_lights_off
   Weather:
     view: yes
