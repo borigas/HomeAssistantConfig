@@ -95,16 +95,20 @@
 - id: garage_open
   alias: Garage Open
   trigger:
-    platform: state
-    entity_id: cover.bens_garage_door, cover.britts_garage_door
-    to: open
+  - entity_id: cover.west_garage_door, cover.east_garage_door
     for:
-      minutes: 1
+      minutes: 5
+    platform: state
+    to: open
+  condition:
+  - condition: state
+    entity_id: group.our_devices
+    state: Away
   action:
-  - service: notify.pushbullet
-    data_template:
+  - data_template:
       message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state
         }} for {{ trigger.for }}'
+    service: notify.pushbullet
 - id: arrive_home_living_room_lights
   alias: Arrive Home Living Room Lights
   trigger:
@@ -141,7 +145,6 @@
     service: script.walkup_music
     data:
       playlist: spotify:user:borigas:playlist:1jBiclFnkbb1kesKneqyL8
-      
 - action:
   - data:
       entity_id: group.lights
