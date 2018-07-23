@@ -36,6 +36,10 @@ homeassistant:
       friendly_name: Today
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
+    cover.east_garage_door:
+      friendly_name: Ben's Garage Door
+    cover.west_garage_door:
+      friendly_name: Britt's Garage Door
 
 script: !include scripts.yaml
 
