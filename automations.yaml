@@ -109,6 +109,19 @@
       message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state
         }} for {{ trigger.for }}'
     service: notify.pushbullet
+- id: garage_open_long_time
+  alias: Garage Open for a long time
+  trigger:
+  - entity_id: cover.west_garage_door, cover.east_garage_door
+    for:
+      hours: 1
+    platform: state
+    to: open
+  action:
+  - data_template:
+      message: '{{ trigger.to_state.attributes["friendly_name"] }} has been {{ trigger.to_state.state
+        }} for {{ trigger.for }}'
+    service: notify.pushbullet
 - id: arrive_home_living_room_lights
   alias: Arrive Home Living Room Lights
   trigger:
