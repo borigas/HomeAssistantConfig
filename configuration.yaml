@@ -292,6 +292,8 @@ switch:
     host: http://192.168.1.83
     username: !secret dlink_user
     password: !secret dlink_password
+  - platform: tplink
+    host: 192.168.1.41
 
 light:
   - platform: template
