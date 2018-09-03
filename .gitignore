@@ -16,5 +16,6 @@ deps/
 *.json
 *.conf
 .spotify-token-cache
+spotify
 .storage/
 esphomeyaml/*/*
