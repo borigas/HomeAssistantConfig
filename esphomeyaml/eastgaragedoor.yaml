@@ -36,10 +36,12 @@ sensor:
     trigger_pin: D3
     echo_pin: D2
     timeout_time: 100ms
-    update_interval: 1s
+    update_interval: 2s
     unit_of_measurement: "ft"
     filters:
       - multiply: 3.28
+      - filter_nan:
+      - filter_out: 0
       - sliding_window_moving_average:
           window_size: 5
           send_every: 5
