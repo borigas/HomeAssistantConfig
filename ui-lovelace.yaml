@@ -26,6 +26,8 @@ views:
           - light.bedroom_ceiling_level
           - switch.kitchen_ceiling_switch
           - switch.living_room_switch
+      #- type: thermostat
+        #entity: climate.hallway_nest
       - type: weather-forecast
         entity: weather.dark_sky
       - type: entities
