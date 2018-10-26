@@ -151,6 +151,10 @@ device_tracker:
 # Track the sun
 #sun:
 
+weather:
+  - platform: darksky
+    api_key: !secret forecast_api_key
+
 sensor:
   - platform: uptime
     unit_of_measurement: hours
