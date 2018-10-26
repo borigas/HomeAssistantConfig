@@ -336,24 +336,6 @@ notify:
   name: pushbullet
 
 group:
-  default_view:
-    name: Home
-    view: yes
-    entities:
-      - updater.updater
-      - device_tracker.ben
-      - device_tracker.britt
-      - group.garage
-      - climate.hallway_nest
-      - group.speedtest
-      - group.media
-      - sensor.dark_sky_apparent_temperature
-      - sensor.dark_sky_daily_low_apparent_temperature
-      - sensor.dark_sky_daily_high_apparent_temperature
-      - sensor.dark_sky_precip_probability
-      - group.lights
-      - light.bedroom_ceiling_level
-      - switch.dlink_smart_plug_w215
   lights:
     name: Lights
     icon: mdi:lightbulb
@@ -378,13 +360,6 @@ group:
       - sensor.speedtest_upload
       - sensor.speedtest_ping
       - sensor.fastcom_download
-  media:
-    view: yes
-    entities:
-      - group.center_tv
-      - group.side_tvs
-      - media_player.basement_chromecast
-      - media_player.spotify
   center_tv:
     name: Center TV
     entities:
@@ -442,15 +417,6 @@ group:
       - automation.garage_open
       - automation.garage_open_long_time
       - automation.no_one_home_lights_off
-  Weather:
-    view: yes
-    entities:
-      - group.weather_summary
-  Admin:
-    view: yes
-    entities:
-      - group.alarms
-      - group.automations
   our_devices:
     name: Our Devices
     entities:
