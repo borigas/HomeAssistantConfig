@@ -44,29 +44,29 @@ views:
             entity: sensor.speedtest_download
             name: Download
             height: 40
-            line_width: 1
-            accuracy: 700
+            line_width: 2
+            accuracy: 200
             hours_to_show: 168
           - type: sensor
             entity: sensor.speedtest_upload
             name: Upload
             height: 40
-            line_width: 1
-            accuracy: 700
+            line_width: 2
+            accuracy: 200
             hours_to_show: 168
           - type: sensor
             entity: sensor.speedtest_ping
             name: Ping
             height: 40
-            line_width: 1
-            accuracy: 700
+            line_width: 2
+            accuracy: 200
             hours_to_show: 168
           - type: sensor
             entity: sensor.fastcom_download
             name: Fast.com Download
             height: 40
-            line_width: 1
-            accuracy: 700
+            line_width: 2
+            accuracy: 200
             hours_to_show: 168
   - title: media
     cards:
