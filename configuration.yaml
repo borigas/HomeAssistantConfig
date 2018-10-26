@@ -63,8 +63,6 @@ http:
   api_password: !secret http_password
   base_url: !secret base_url
   cors_allowed_origins: !secret base_url
-#  ssl_certificate: !secret ssl_certificate
-#  ssl_key: !secret ssl_key
   server_port: 8123
   use_x_forwarded_for: true
   trusted_proxies: 192.168.1.20
