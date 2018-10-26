@@ -42,8 +42,9 @@ views:
           - light.bedroom_ceiling_level
           - switch.kitchen_ceiling_switch
           - switch.living_room_switch
-      #- type: thermostat
-        #entity: climate.hallway_nest
+      - id: cc706ac562ff4344b0efef8f44416e78  # Automatically created id
+        type: thermostat
+        entity: climate.hallway_nest
       # - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
       #   type: vertical-stack
       #   title: Speedtest
