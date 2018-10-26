@@ -15,8 +15,6 @@ views:
           - sensor.dark_sky_daily_low_apparent_temperature
           - sensor.dark_sky_daily_high_apparent_temperature
           - sensor.dark_sky_precip_probability
-          - light.bedroom_ceiling_level
-          - switch.dlink_smart_plug_w215
       - type: entities
         title: Garage
         show_header_toggle: true
@@ -33,40 +31,6 @@ views:
           - sensor.speedtest_upload
           - sensor.speedtest_ping
           - sensor.fastcom_download
-      - type: entities
-        title: Center TV
-        show_header_toggle: true
-        entities:
-          - script.tv_center_power_up
-          - script.tv_center_power_down
-          - script.tv_center_volume_up
-          - script.tv_center_volume_down
-          - script.tv_center_volume_way_up
-          - script.tv_center_volume_way_down
-          - script.tv_center_mute
-      - type: media-control
-        entity: media_player.center_chromecast
-      - type: media-control
-        entity: media_player.surround_chromecast
-      - type: entities
-        title: Side TVs
-        show_header_toggle: true
-        entities:
-          - script.tv_sides_power_up
-          - script.tv_sides_power_down
-          - script.tv_sides_volume_up
-          - script.tv_sides_volume_down
-          - script.tv_sides_volume_way_up
-          - script.tv_sides_volume_way_down
-          - script.tv_sides_mute
-      - type: media-control
-        entity: media_player.left_chromecast
-      - type: media-control
-        entity: media_player.right_chromecast
-      - type: media-control
-        entity: media_player.basement_chromecast
-      - type: media-control
-        entity: media_player.spotify
       - type: entities
         title: Lights
         show_header_toggle: true
