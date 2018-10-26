@@ -13,23 +13,27 @@ views:
           - sensor.dark_sky_daily_low_apparent_temperature
           - sensor.dark_sky_daily_high_apparent_temperature
           - sensor.dark_sky_precip_probability
-      - id: 75f499537a844efe8c7b9c16851275d3  # Automatically created id
-        type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - cover.west_garage_door
-              - cover.east_garage_door
-          - type: sensor
-            entity: sensor.britts_garage_door_raw
-            height: 100
-            line_width: 2
-            accuracy: 200
-          - type: sensor
-            entity: sensor.bens_garage_door_raw
-            height: 100
-            line_width: 2
-            accuracy: 200
+      # - id: 75f499537a844efe8c7b9c16851275d3  # Automatically created id
+      #   type: vertical-stack
+      #   cards:
+      - id: 6f8fee25c9a94908b548dffe35cf9505  # Automatically created id
+        type: entities
+        entities:
+          - cover.west_garage_door
+          - cover.east_garage_door
+      - id: e236506e2ef4487482210dcef3122c36  # Automatically created id
+        type: sensor
+        entity: sensor.britts_garage_door_raw
+        height: 100
+        line_width: 2
+        accuracy: 200
+      - id: 8c9aa6b8a6494efca1266272a0ffbfdc  # Automatically created id
+        type: sensor
+        entity: sensor.bens_garage_door_raw
+        height: 100
+        line_width: 2
+        accuracy: 200
+
       - id: 7eb18e16578f45e39ec6fdea945d8fbb  # Automatically created id
         type: entities
         title: Lights
@@ -40,55 +44,64 @@ views:
           - switch.living_room_switch
       #- type: thermostat
         #entity: climate.hallway_nest
-      - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
-        type: vertical-stack
-        title: Speedtest
-        show_header_toggle: true
-        cards:
-          - type: sensor
-            entity: sensor.speedtest_download
-            name: Download
-            height: 40
-            line_width: 2
-            accuracy: 200
-            hours_to_show: 168
-          - type: sensor
-            entity: sensor.speedtest_upload
-            name: Upload
-            height: 40
-            line_width: 2
-            accuracy: 200
-            hours_to_show: 168
-          - type: sensor
-            entity: sensor.speedtest_ping
-            name: Ping
-            height: 40
-            line_width: 2
-            accuracy: 200
-            hours_to_show: 168
-          - type: sensor
-            entity: sensor.fastcom_download
-            name: Fast.com Download
-            height: 40
-            line_width: 2
-            accuracy: 200
-            hours_to_show: 168
+      # - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
+      #   type: vertical-stack
+      #   title: Speedtest
+      #   show_header_toggle: true
+      #   cards:
+      - id: 5a052b3dbc444607bcc21e8d2848d3b7  # Automatically created id
+        type: sensor
+        entity: sensor.speedtest_download
+        name: Download
+        height: 40
+        line_width: 2
+        accuracy: 200
+        hours_to_show: 168
+      - id: 92379e7051d84f8fb0d6f5dfa922a910  # Automatically created id
+        type: sensor
+        entity: sensor.speedtest_upload
+        name: Upload
+        height: 40
+        line_width: 2
+        accuracy: 200
+        hours_to_show: 168
+      - id: 4f8124c77d4242fcb4b3703b8f6fce8b  # Automatically created id
+        type: sensor
+        entity: sensor.speedtest_ping
+        name: Ping
+        height: 40
+        line_width: 2
+        accuracy: 200
+        hours_to_show: 168
+      - id: 2278773bf2c84197852421b9b47de9bb  # Automatically created id
+        type: sensor
+        entity: sensor.fastcom_download
+        name: Fast.com Download
+        height: 40
+        line_width: 2
+        accuracy: 200
+        hours_to_show: 168
   - id: 1  # Automatically created id
     title: media
     cards:
-      - id: 38f9cc35506b4a9bab4ed83a2dcc0fbd  # Automatically created id
-        type: vertical-stack
-        cards:
-          - type: media-control
-            entity: media_player.center_chromecast
-          - type: media-control
-            entity: media_player.surround_chromecast
-          - type: media-control
-            entity: media_player.left_chromecast
-          - type: media-control
-            entity: media_player.right_chromecast
-          - type: media-control
-            entity: media_player.basement_chromecast
+      # - id: 38f9cc35506b4a9bab4ed83a2dcc0fbd  # Automatically created id
+      #   type: vertical-stack
+      #   cards:
+      - id: efeba7b68521497a8013fa67086daa6d  # Automatically created id
+        type: media-control
+        entity: media_player.center_chromecast
+      - id: b5c270c15bfd49aeb0ec88a750042c6b  # Automatically created id
+        type: media-control
+        entity: media_player.surround_chromecast
+      - id: a6c60fd01950465b8ee9db757720674b  # Automatically created id
+        type: media-control
+        entity: media_player.left_chromecast
+      - id: de53a25d62e04801adf0d5c08d83ed56  # Automatically created id
+        type: media-control
+        entity: media_player.right_chromecast
+      - id: b711bbc1f62a4f388ade240e4133b958  # Automatically created id
+        type: media-control
+        entity: media_player.basement_chromecast
       - id: 7dd81aef82a047e59bfcef8b3dd8705b  # Automatically created id
         type: media-control
         entity: media_player.spotify
