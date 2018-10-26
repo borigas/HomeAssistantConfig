@@ -1,8 +1,10 @@
 title: Home
 views:
-  - title: Home
+  - id: 0  # Automatically created id
+    title: Home
     cards:
-      - type: glance
+      - id: 8f08b2e84a0740a3ab7f4d4ea4ad0544  # Automatically created id
+        type: glance
         entities:
           - device_tracker.ben
           - device_tracker.britt
@@ -11,7 +13,8 @@ views:
           - sensor.dark_sky_daily_low_apparent_temperature
           - sensor.dark_sky_daily_high_apparent_temperature
           - sensor.dark_sky_precip_probability
-      - type: vertical-stack
+      - id: 75f499537a844efe8c7b9c16851275d3  # Automatically created id
+        type: vertical-stack
         cards:
           - type: entities
             entities:
@@ -27,7 +30,8 @@ views:
             height: 100
             line_width: 2
             accuracy: 200
-      - type: entities
+      - id: 7eb18e16578f45e39ec6fdea945d8fbb  # Automatically created id
+        type: entities
         title: Lights
         show_header_toggle: true
         entities:
@@ -36,7 +40,8 @@ views:
           - switch.living_room_switch
       #- type: thermostat
         #entity: climate.hallway_nest
-      - type: vertical-stack
+      - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
+        type: vertical-stack
         title: Speedtest
         show_header_toggle: true
         cards:
@@ -68,9 +73,11 @@ views:
             line_width: 2
             accuracy: 200
             hours_to_show: 168
-  - title: media
+  - id: 1  # Automatically created id
+    title: media
     cards:
-      - type: vertical-stack
+      - id: 38f9cc35506b4a9bab4ed83a2dcc0fbd  # Automatically created id
+        type: vertical-stack
         cards:
           - type: media-control
             entity: media_player.center_chromecast
@@ -82,9 +89,11 @@ views:
             entity: media_player.right_chromecast
           - type: media-control
             entity: media_player.basement_chromecast
-      - type: media-control
+      - id: 7dd81aef82a047e59bfcef8b3dd8705b  # Automatically created id
+        type: media-control
         entity: media_player.spotify
-      - type: entities
+      - id: c96c685c63b54423937276023ae1f4a1  # Automatically created id
+        type: entities
         title: Center TV
         show_header_toggle: true
         entities:
@@ -95,7 +104,8 @@ views:
           - script.tv_center_volume_way_up
           - script.tv_center_volume_way_down
           - script.tv_center_mute
-      - type: entities
+      - id: a8b0831b6edc4ab5866c10c96d50a703  # Automatically created id
+        type: entities
         title: Side TVs
         show_header_toggle: true
         entities:
@@ -106,11 +116,14 @@ views:
           - script.tv_sides_volume_way_up
           - script.tv_sides_volume_way_down
           - script.tv_sides_mute
-  - title: Weather
+  - id: 2  # Automatically created id
+    title: Weather
     cards:
-      - type: weather-forecast
+      - id: fcda0e7f6c5247c695ad9d31df689453  # Automatically created id
+        type: weather-forecast
         entity: weather.dark_sky
-      - type: entities
+      - id: aa5b12c7b0994656ace9b55bb7bcbd85  # Automatically created id
+        type: entities
         title: Weather Summary
         show_header_toggle: true
         entities:
@@ -122,9 +135,11 @@ views:
           - sensor.dark_sky_summary
           - sensor.dark_sky_hourly_summary
           - sensor.dark_sky_daily_summary
-  - title: Admin
+  - id: 3  # Automatically created id
+    title: Admin
     cards:
-      - type: entities
+      - id: d56c381094bb4d7589c0433934e2dbb2  # Automatically created id
+        type: entities
         title: Alarms
         show_header_toggle: true
         entities:
@@ -132,7 +147,8 @@ views:
           - input_boolean.alarm_lights_today
           - input_number.alarm_hour
           - input_number.alarm_minute
-      - type: entities
+      - id: a7aca957f15d49358beb5b84f9e3bb9d  # Automatically created id
+        type: entities
         title: Automations
         show_header_toggle: true
         entities:
