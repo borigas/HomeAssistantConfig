@@ -70,6 +70,20 @@ views:
             hours_to_show: 168
   - title: media
     cards:
+      - type: vertical-stack
+        cards:
+          - type: media-control
+            entity: media_player.center_chromecast
+          - type: media-control
+            entity: media_player.surround_chromecast
+          - type: media-control
+            entity: media_player.left_chromecast
+          - type: media-control
+            entity: media_player.right_chromecast
+          - type: media-control
+            entity: media_player.basement_chromecast
+      - type: media-control
+        entity: media_player.spotify
       - type: entities
         title: Center TV
         show_header_toggle: true
@@ -81,10 +95,6 @@ views:
           - script.tv_center_volume_way_up
           - script.tv_center_volume_way_down
           - script.tv_center_mute
-      - type: media-control
-        entity: media_player.center_chromecast
-      - type: media-control
-        entity: media_player.surround_chromecast
       - type: entities
         title: Side TVs
         show_header_toggle: true
@@ -96,14 +106,6 @@ views:
           - script.tv_sides_volume_way_up
           - script.tv_sides_volume_way_down
           - script.tv_sides_mute
-      - type: media-control
-        entity: media_player.left_chromecast
-      - type: media-control
-        entity: media_player.right_chromecast
-      - type: media-control
-        entity: media_player.basement_chromecast
-      - type: media-control
-        entity: media_player.spotify
   - title: Weather
     cards:
       - type: weather-forecast
