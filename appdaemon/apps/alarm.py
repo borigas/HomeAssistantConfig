@@ -24,7 +24,10 @@ class Alarm(hass.Hass):
 
   DEBUG = False
 
-  PLAYLIST = "spotify:user:spotify:playlist:37i9dQZEVXcN0w5MZ6mb7Y"
+  # Discover Weekly
+  #PLAYLIST = "spotify:user:spotify:playlist:37i9dQZEVXcN0w5MZ6mb7Y"
+  # Octane / Turbo
+  PLAYLIST = "spotify:user:tmw350:playlist:0Mhm76DQKQersA8162P204"
 
   def initialize(self):
     self.log("Initializing AppDaemon Alarm")
@@ -117,13 +120,14 @@ class Alarm(hass.Hass):
     self.call_service("media_player/media_pause", entity_id = Alarm.SPOTIFY_ENTITY)
     self.log(f"Setting {Alarm.SPOTIFY_ENTITY} source to {Alarm.MUSIC_SOURCE}")
     self.call_service("media_player/select_source", entity_id = Alarm.SPOTIFY_ENTITY, source = Alarm.MUSIC_SOURCE)
-    self.volume = 0
+    self.volume = 0.01
     self.updateVolume()
     # Give volume a chance to sync before starting to avoid loud initial volume
     self.run_in(self.startPlaylist, 10)
 
   def startPlaylist(self, kwargs):
     self.log(f"Starting playlist")
+    self.call_service("media_player/shuffle_set", entity_id = Alarm.SPOTIFY_ENTITY, shuffle = "true")
     self.call_service("media_player/play_media", entity_id = Alarm.SPOTIFY_ENTITY, media_content_id = Alarm.PLAYLIST, media_content_type = "playlist")
     self.increaseVolumeAndStartTimer()
 
