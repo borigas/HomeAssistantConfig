@@ -41,6 +41,11 @@ homeassistant:
     cover.west_garage_door:
       friendly_name: Britt's Garage Door
 
+system_health:
+
+lovelace:
+  mode: yaml
+
 script: !include scripts.yaml
 
 automation: !include automations.yaml
@@ -161,7 +166,6 @@ sensor:
   # Prediction of weather
   - platform: darksky
     api_key: !secret forecast_api_key
-    update_interval: '01:00:00'
     monitored_conditions:
       - summary
       #- icon
@@ -187,26 +191,14 @@ sensor:
       - apparent_temperature_max
       - apparent_temperature_min
       - precip_intensity_max
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-    minute:
-      - 0
-      - 10
-      - 20
-      - 30
-      - 40
-      - 50
-  - platform: fastdotcom
-    minute:
-      - 5
-      - 15
-      - 25
-      - 35
-      - 45
-      - 55
+  # - platform: speedtestdotnet
+  #   monitored_conditions:
+  #     - ping
+  #     - download
+  #     - upload
+  #   scan_interval: '0:15'
+  # - platform: fastdotcom
+  #   scan_interval: '0:15'
   - platform: mqtt
     state_topic: "westgaragedoor/sensor/garagesensor/state"
     name: "Britt's Garage Door Raw"
