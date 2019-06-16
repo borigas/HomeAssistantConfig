@@ -68,9 +68,7 @@
   alias: Enable todays alarm
   trigger:
     platform: time
-    hours: 9
-    minutes: 0
-    seconds: 0
+    at: "9:00:00"
   condition:
     condition: state
     entity_id: input_boolean.alarm_lights
@@ -82,9 +80,7 @@
   alias: Disable todays alarm
   trigger:
     platform: time
-    hours: 9
-    minutes: 0
-    seconds: 0
+    at: "9:00:00"
   condition:
     condition: state
     entity_id: input_boolean.alarm_lights
