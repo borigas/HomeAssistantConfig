@@ -36,10 +36,6 @@ homeassistant:
       friendly_name: Today
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
-    cover.east_garage_door:
-      friendly_name: Ben's Garage Door
-    cover.west_garage_door:
-      friendly_name: Britt's Garage Door
 
 system_health:
 
@@ -189,16 +185,6 @@ sensor:
   #   scan_interval: '0:15'
   # - platform: fastdotcom
   #   scan_interval: '0:15'
-  - platform: mqtt
-    state_topic: "westgaragedoor/sensor/garagesensor/state"
-    name: "Britt's Garage Door Raw"
-    qos: 0
-    unit_of_measurement: "ft"
-  - platform: mqtt
-    state_topic: "eastgaragedoor/sensor/garagesensor/state"
-    name: "Ben's Garage Door Raw"
-    qos: 0
-    unit_of_measurement: "ft"
 
 # View all events in a logbook
 logbook:
