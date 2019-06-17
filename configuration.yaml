@@ -188,8 +188,8 @@ sensor:
       - daily_summary
       #- temperature_max
       #- temperature_min
-      - apparent_temperature_max
-      - apparent_temperature_min
+      - apparent_temperature_high
+      - apparent_temperature_low
       - precip_intensity_max
   # - platform: speedtestdotnet
   #   monitored_conditions:
