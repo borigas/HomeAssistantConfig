@@ -9,8 +9,8 @@ views:
           - device_tracker.ben
           - device_tracker.britt
           - sensor.dark_sky_apparent_temperature
-          - sensor.dark_sky_daily_low_apparent_temperature
-          - sensor.dark_sky_daily_high_apparent_temperature
+          - sensor.dark_sky_overnight_low_apparent_temperature_0d
+          - sensor.dark_sky_daytime_high_apparent_temperature_0d
           - sensor.dark_sky_precip_probability
       - id: 75f499537a844efe8c7b9c16851275d3  # Automatically created id
         type: vertical-stack
@@ -141,10 +141,10 @@ views:
         show_header_toggle: true
         entities:
           - sensor.dark_sky_apparent_temperature
-          - sensor.dark_sky_daily_low_apparent_temperature
-          - sensor.dark_sky_daily_high_apparent_temperature
+          - sensor.dark_sky_overnight_low_apparent_temperature_0d
+          - sensor.dark_sky_daytime_high_apparent_temperature_0d
           - sensor.dark_sky_precip_probability
-          - sensor.dark_sky_daily_max_precip_intensity
+          - sensor.dark_sky_daily_max_precip_intensity_0d
           - sensor.dark_sky_summary
           - sensor.dark_sky_hourly_summary
           - sensor.dark_sky_daily_summary
