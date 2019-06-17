@@ -135,16 +135,6 @@ google_assistant:
     light.living_room_tvs:
       aliases:
         - Living Room TVs
-  
-mqtt:
-#  broker: m12.cloudmqtt.com
-#  port: 14782
-#  username: HomeAssistant
-#  password: !secret mqtt_password
-#  broker: 127.0.0.1
-#  port: 1883
-  broker: core-mosquitto
-  discovery: true
 
 
 device_tracker:
