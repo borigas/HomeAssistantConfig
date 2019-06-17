@@ -22,13 +22,13 @@ views:
               - cover.east_garage_door
           - id: e236506e2ef4487482210dcef3122c36  # Automatically created id
             type: sensor
-            entity: sensor.britts_garage_door_raw
+            entity: sensor.westgaragesensor
             height: 100
             line_width: 2
             accuracy: 200
           - id: 8c9aa6b8a6494efca1266272a0ffbfdc  # Automatically created id
             type: sensor
-            entity: sensor.bens_garage_door_raw
+            entity: sensor.eastgaragesensor
             height: 100
             line_width: 2
             accuracy: 200

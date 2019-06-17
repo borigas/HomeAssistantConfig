@@ -1,4 +1,4 @@
-esphomeyaml:
+esphome:
   name: westgaragedoor
   platform: ESP8266
   board: nodemcuv2
@@ -14,8 +14,8 @@ wifi:
 
 mqtt:
   broker: '192.168.1.12'
-  username: ''
-  password: ''
+  username: !secret mqtt_user
+  password: !secret mqtt_password
 
 # Enable logging
 logger:
@@ -25,22 +25,22 @@ ota:
 
 switch:
   - platform: gpio
-    id: GarageRelay
-    name: "GarageRelay"
+    id: WestGarageRelay
+    name: "WestGarageRelay"
     pin: D1
 
 sensor:
   - platform: ultrasonic
-    id: GarageSensor
-    name: "GarageSensor"
+    id: WestGarageSensor
+    name: "WestGarageSensor"
     trigger_pin: D3
     echo_pin: D2
-    timeout_time: 100ms
-    update_interval: 2s
+    timeout: 10m
+    update_interval: 30s
     unit_of_measurement: "ft"
     filters:
       - multiply: 3.28
-      - filter_nan:
+      #- filter_nan:
       - filter_out: 0
       - sliding_window_moving_average:
           window_size: 5
@@ -52,20 +52,20 @@ cover:
   - platform: template
     name: "West Garage Door"
     lambda: >-
-      if(id(GarageSensor).value <= 4) {
+      if(id(WestGarageSensor).state <= 4) {
         return cover::COVER_OPEN;
       } else {
         return cover::COVER_CLOSED;
       }
     open_action:
       - switch.turn_on:
-          id: GarageRelay
+          id: WestGarageRelay
       - delay: 200ms
       - switch.turn_off:
-          id: GarageRelay
+          id: WestGarageRelay
     close_action:
       - switch.turn_on:
-          id: GarageRelay
+          id: WestGarageRelay
       - delay: 200ms
       - switch.turn_off:
-          id: GarageRelay
+          id: WestGarageRelay

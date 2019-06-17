@@ -375,8 +375,8 @@ group:
     entities:
       - cover.west_garage_door
       - cover.east_garage_door
-      - sensor.bens_garage_door_raw
-      - sensor.britts_garage_door_raw
+      - sensor.eastgaragesensor
+      - sensor.westgaragesensor
   Weather Summary:
     entities:
       - sensor.dark_sky_apparent_temperature
