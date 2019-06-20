@@ -210,6 +210,18 @@ discovery:
 
 # Enables support for tracking state changes over time.
 history:
+  include:
+    domains:
+      - automation
+      - cover
+      - light
+      - switch
+      - climate
+    entities:
+      - sensor.eastgaragedoor
+      - sensor.westgaragedoor
+      - device_tracker.ben
+      - device_tracker.britt
 
 # Checks for available updates
 updater:
