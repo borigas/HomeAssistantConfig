@@ -47,13 +47,6 @@ script: !include scripts.yaml
 automation: !include automations.yaml
 
 zone:
-  name: Work
-  latitude: 40.813299
-  longitude: -96.710486
-  radius: 500
-  icon: mdi:desktop-mac
-
-zone 2:
   name: Home
   latitude: !secret latitude
   longitude: !secret longitude
@@ -88,49 +81,8 @@ google_assistant:
   entity_config:
     light.bedroom_ceiling_level:
       aliases:
-        Bedroom Ceiling
         Bedroom
-    script.tv_sides_volume_up:
-      name: Side Volume Up
-      expose: true
-    script.tv_sides_volume_down:
-      name: Side Volume Down
-      expose: true
-    script.tv_sides_volume_way_up:
-      name: Raise Side Volume
-      expose: true
-    script.tv_sides_volume_way_down:
-      name: Lower Side Volume
-      expose: true
-    script.tv_sides_mute:
-      name: Mute Sides
-      expose: true
-    script.tv_center_volume_up:
-      name: Center Volume Up
-      expose: true
-    script.tv_center_volume_down:
-      name: Center Volume Down
-      expose: true
-    script.tv_center_volume_way_up:
-      name: Raise Center Volume
-      expose: true
-    script.tv_center_volume_way_down:
-      name: Lower Center Volume
-      expose: true
-    script.tv_center_mute:
-      name: Mute Center
-      expose: true
-    light.center_tv:
-      aliases:
-        - Center TV
-        - Center Power Down
-    light.side_tvs:
-      aliases:
-        - Side TVs
-        - Sides Power Down
-    light.living_room_tvs:
-      aliases:
-        - Living Room TVs
+        Bedroom Ceiling
 
 
 device_tracker:
@@ -237,12 +189,6 @@ nest:
 climate:
   platform: nest
 
-remote:
-  - platform: harmony
-    name: LivingRoom
-    host: 192.168.1.70
-    activity: Center TV
-
 media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
@@ -278,40 +224,6 @@ switch:
   - platform: tplink
     host: 192.168.1.41
 
-light:
-  - platform: template
-    lights:
-      center_tv:
-        friendly_name: "Center TV"
-        turn_on:
-          service: script.turn_on
-          data:
-            entity_id: script.tv_center_power_up
-        turn_off:
-          service: script.turn_on
-          data:
-            entity_id: script.tv_center_off
-      side_tvs:
-        friendly_name: "Side TVs"
-        turn_on:
-          service: script.turn_on
-          data:
-            entity_id: script.tv_sides_power_up
-        turn_off:
-          service: script.turn_on
-          data:
-            entity_id: script.tv_sides_off
-      living_room_tvs:
-        friendly_name: "Living Room TVs"
-        turn_on:
-          service: script.turn_on
-          data:
-            entity_id: script.tv_center_power_up
-        turn_off:
-          service: script.turn_on
-          data:
-            entity_id: script.living_room_off
-
 notify:
 #  platform: html5
 #  name: HTML5
@@ -346,30 +258,6 @@ group:
       - sensor.speedtest_upload
       - sensor.speedtest_ping
       - sensor.fastcom_download
-  center_tv:
-    name: Center TV
-    entities:
-      - script.tv_center_power_up
-      - script.tv_center_power_down
-      - script.tv_center_volume_up
-      - script.tv_center_volume_down
-      - script.tv_center_volume_way_up
-      - script.tv_center_volume_way_down
-      - script.tv_center_mute
-      - media_player.center_chromecast
-      - media_player.surround_chromecast
-  side_tvs:
-    name: Side TVs
-    entities:
-      - script.tv_sides_power_up
-      - script.tv_sides_power_down
-      - script.tv_sides_volume_up
-      - script.tv_sides_volume_down
-      - script.tv_sides_volume_way_up
-      - script.tv_sides_volume_way_down
-      - script.tv_sides_mute
-      - media_player.left_chromecast
-      - media_player.right_chromecast
   garage:
     name: Garage
     entities:

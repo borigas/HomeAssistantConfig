@@ -105,30 +105,6 @@ views:
           - id: 7dd81aef82a047e59bfcef8b3dd8705b  # Automatically created id
             type: media-control
             entity: media_player.spotify
-      - id: c96c685c63b54423937276023ae1f4a1  # Automatically created id
-        type: entities
-        title: Center TV
-        show_header_toggle: true
-        entities:
-          - script.tv_center_power_up
-          - script.tv_center_power_down
-          - script.tv_center_volume_up
-          - script.tv_center_volume_down
-          - script.tv_center_volume_way_up
-          - script.tv_center_volume_way_down
-          - script.tv_center_mute
-      - id: a8b0831b6edc4ab5866c10c96d50a703  # Automatically created id
-        type: entities
-        title: Side TVs
-        show_header_toggle: true
-        entities:
-          - script.tv_sides_power_up
-          - script.tv_sides_power_down
-          - script.tv_sides_volume_up
-          - script.tv_sides_volume_down
-          - script.tv_sides_volume_way_up
-          - script.tv_sides_volume_way_down
-          - script.tv_sides_mute
   - id: 2  # Automatically created id
     title: Weather
     cards:
