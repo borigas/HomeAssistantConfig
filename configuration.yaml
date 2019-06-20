@@ -159,6 +159,8 @@ config:
 discovery:
   ignore:
     - netgear_router
+    - igd
+    - plex_mediaserver
 
 # Enables support for tracking state changes over time.
 history:
