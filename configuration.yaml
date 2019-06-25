@@ -140,9 +140,6 @@ sensor:
   # - platform: fastdotcom
   #   scan_interval: '0:15'
 
-# View all events in a logbook
-logbook:
-
 # Allows you to issue voice commands from the frontend
 conversation:
 
@@ -163,7 +160,8 @@ discovery:
     - plex_mediaserver
 
 # Enables support for tracking state changes over time.
-history:
+recorder:
+  db_url: mysql://hass:mariapassword@core-mariadb/homeassistant?charset=utf8
   include:
     domains:
       - automation
@@ -176,6 +174,10 @@ history:
       - sensor.westgaragedoor
       - device_tracker.ben
       - device_tracker.britt
+      
+history:
+
+logbook:
 
 # Checks for available updates
 updater:
