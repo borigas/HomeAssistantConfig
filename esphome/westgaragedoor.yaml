@@ -47,6 +47,9 @@ sensor:
           send_every: 5
       - delta: 1
       - heartbeat: 60s
+  - platform: wifi_signal
+    name: "West Garage Wifi"
+    update_interval: 300s
 
 cover:
   - platform: template

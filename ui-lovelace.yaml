@@ -19,19 +19,11 @@ views:
             type: entities
             entities:
               - cover.west_garage_door
+              - sensor.westgaragesensor
+              - sensor.west_garage_wifi
               - cover.east_garage_door
-          - id: e236506e2ef4487482210dcef3122c36  # Automatically created id
-            type: sensor
-            entity: sensor.westgaragesensor
-            height: 100
-            line_width: 2
-            accuracy: 200
-          - id: 8c9aa6b8a6494efca1266272a0ffbfdc  # Automatically created id
-            type: sensor
-            entity: sensor.eastgaragesensor
-            height: 100
-            line_width: 2
-            accuracy: 200
+              - sensor.eastgaragesensor
+              - sensor.east_garage_wifi
 
       - id: 7eb18e16578f45e39ec6fdea945d8fbb  # Automatically created id
         type: entities
