@@ -50,6 +50,9 @@ sensor:
   - platform: wifi_signal
     name: "East Garage Wifi"
     update_interval: 300s
+  - platform: uptime
+    name: East Garage Uptime
+    update_interval: 300s
 
 cover:
   - platform: template
