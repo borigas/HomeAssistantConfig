@@ -37,6 +37,13 @@ homeassistant:
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
 
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.1.0/24
+    - type: legacy_api_password
+      api_password: !secret http_password
+
 system_health:
 
 lovelace:
@@ -54,13 +61,11 @@ zone:
   icon: mdi:home
 
 http:
-  api_password: !secret http_password
   base_url: !secret base_url
   cors_allowed_origins: !secret base_url
   server_port: 8123
   use_x_forwarded_for: true
   trusted_proxies: 192.168.1.20
-  trusted_networks: 192.168.1.0/24
 
 emulated_hue:
   listen_port: 80
