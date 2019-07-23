@@ -225,12 +225,6 @@ input_number:
     max: 55
     step: 5
 
-switch:
-  - platform: dlink
-    host: http://192.168.1.83
-    username: !secret dlink_user
-    password: !secret dlink_password
-
 tplink:
   discovery: true    
 
