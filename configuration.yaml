@@ -232,7 +232,15 @@ input_number:
     step: 5
 
 tplink:
-  discovery: true    
+  discovery: true
+
+camera:
+  - platform: mjpeg
+    name: Puppy Cam 1
+    mjpeg_url: http://192.168.1.43/mjpeg.cgi
+    still_image_url: http://192.168.1.43/image.jpg
+    username: hass
+    password: hasscam
 
 notify:
 #  platform: html5
