@@ -38,9 +38,6 @@ views:
       - id: cc706ac562ff4344b0efef8f44416e78  # Automatically created id
         type: thermostat
         entity: climate.hallway_nest
-      - type: picture-entity
-        entity: camera.puppy_cam_1
-        camera_view: live
       # - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
       #   type: vertical-stack
       #   title: Speedtest
@@ -78,6 +75,12 @@ views:
       #       line_width: 2
       #       accuracy: 200
       #       hours_to_show: 168
+  - title: puppy
+    cards:
+      - type: picture-entity
+        entity: camera.puppy_cam_1
+        show_state: false
+        camera_view: live
   - id: 1  # Automatically created id
     title: media
     cards:
