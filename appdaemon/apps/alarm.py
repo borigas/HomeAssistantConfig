@@ -23,6 +23,7 @@ class Alarm(hass.Hass):
   VOLUME_STEP = 0.05
 
   DEBUG = False
+  AUDIO_ALARM = False
 
   # Discover Weekly
   #PLAYLIST = "spotify:user:spotify:playlist:37i9dQZEVXcN0w5MZ6mb7Y"
@@ -93,7 +94,8 @@ class Alarm(hass.Hass):
       self.brightness = 0
       self.increaseBrightnessAndStartTimer()
 
-      self.startMusic()
+      if(AUDIO_ALARM):
+        self.startMusic()
 
     self.log("Timer callback finished")
 
@@ -156,9 +158,10 @@ class Alarm(hass.Hass):
     if(self.getIsAlarmEnabled()):
       self.turn_off(Alarm.ALARM_ENTITY)
 
-    currentSource = self.get_state(Alarm.SPOTIFY_ENTITY, attribute = "source")
-    if(currentSource == Alarm.MUSIC_SOURCE):
-      self.call_service("media_player/media_pause", entity_id = Alarm.SPOTIFY_ENTITY)
+    if(AUDIO_ALARM):
+      currentSource = self.get_state(Alarm.SPOTIFY_ENTITY, attribute = "source")
+      if(currentSource == Alarm.MUSIC_SOURCE):
+        self.call_service("media_player/media_pause", entity_id = Alarm.SPOTIFY_ENTITY)
 
     futureAlarmState = self.get_state(Alarm.FUTURE_TOGGLE)
     self.set_state(Alarm.DAY_TOGGLE, state = futureAlarmState)
