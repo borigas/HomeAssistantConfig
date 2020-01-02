@@ -58,7 +58,7 @@ cover:
   - platform: template
     name: "West Garage Door"
     lambda: >-
-      if(id(WestGarageSensor).state <= 4) {
+      if(id(WestGarageSensor).state <= 3.5) {
         return cover::COVER_OPEN;
       } else {
         return cover::COVER_CLOSED;
