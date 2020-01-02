@@ -77,8 +77,16 @@ views:
       #       hours_to_show: 168
   - title: puppy
     cards:
+      # - type: picture-entity
+      #   entity: camera.puppy_cam_1
+      #   show_state: false
+      #   camera_view: live
       - type: picture-entity
-        entity: camera.puppy_cam_1
+        entity: camera.dining_room
+        show_state: false
+        camera_view: live
+      - type: picture-entity
+        entity: camera.crate
         show_state: false
         camera_view: live
   - id: 1  # Automatically created id

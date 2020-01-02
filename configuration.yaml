@@ -234,6 +234,9 @@ input_number:
 tplink:
   discovery: true
 
+stream:
+ffmpeg:
+
 camera:
   - platform: mjpeg
     name: Puppy Cam 1
@@ -241,6 +244,21 @@ camera:
     still_image_url: http://192.168.1.43/image.jpg
     username: hass
     password: hasscam
+  # - platform: ffmpeg
+  #   input: rtsp://wyzertsp:rtsppass@192.168.1.47/live
+  #   extra_arguments: -pred 1 -filter:v "crop=in_w/2:in_h/2"
+  #   name: Puppy Cam 1
+  - platform: generic
+    name: Dining Room
+    stream_source: rtsp://wyzertsp:rtsppass@192.168.1.46/live
+    still_image_url: https://127.0.0.1/404.png
+  - platform: generic
+    name: Crate
+    stream_source: rtsp://wyzertsp:rtsppass@192.168.1.47/live
+    still_image_url: https://127.0.0.1/404.png
+  # - platform: ffmpeg
+  #   input: rtsp://wyzertsp:rtsppass@192.168.1.46/live
+  #   name: Puppy Cam 1
 
 notify:
 #  platform: html5
