@@ -79,7 +79,7 @@ emulated_hue:
 
 google_assistant:
   project_id: !secret google_assistant_project_id
-  api_key: !secret google_assistant_api_key
+  service_account: !include google_service_account.json
   exposed_domains:
     - switch
     - light
