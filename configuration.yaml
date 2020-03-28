@@ -203,10 +203,9 @@ nest:
 climate:
   platform: nest
 
-media_player:
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
 
 input_boolean:
   alarm_lights:
