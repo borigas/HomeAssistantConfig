@@ -96,6 +96,9 @@ device_tracker:
     host: 192.168.1.1
     username: admin
     password: !secret router_password
+  - platform: google_maps
+    username: origaslocationsharing@gmail.com
+    max_gps_accuracy: 200
 
 # Track the sun
 #sun:

@@ -19,3 +19,4 @@ deps/
 spotify
 .storage/
 esphomeyaml/*/*
+.google_maps_location_sharing.cookies.*

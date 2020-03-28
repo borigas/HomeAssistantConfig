@@ -6,8 +6,8 @@ views:
       - id: 8f08b2e84a0740a3ab7f4d4ea4ad0544  # Automatically created id
         type: glance
         entities:
-          - device_tracker.ben
-          - device_tracker.britt
+          - person.ben
+          - person.britt
           - sensor.dark_sky_apparent_temperature
           - sensor.dark_sky_overnight_low_apparent_temperature_0d
           - sensor.dark_sky_daytime_high_apparent_temperature_0d
@@ -38,6 +38,12 @@ views:
       - id: cc706ac562ff4344b0efef8f44416e78  # Automatically created id
         type: thermostat
         entity: climate.hallway_nest
+      - type: map
+        entities:
+          - person.ben
+          - person.britt
+          - device_tracker.google_maps_104506917447049484567
+          - zone.home
       # - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
       #   type: vertical-stack
       #   title: Speedtest
