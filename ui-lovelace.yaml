@@ -40,10 +40,9 @@ views:
         entity: climate.hallway_nest
       - type: map
         entities:
-          - person.ben
-          - person.britt
-          - device_tracker.google_maps_104506917447049484567
           - zone.home
+          - device_tracker.google_maps_104506917447049484567
+          - device_tracker.google_maps_100084428449204867015
       # - id: 1211351336d94a2b90e44baefbc71fec  # Automatically created id
       #   type: vertical-stack
       #   title: Speedtest

@@ -11,3 +11,17 @@ Britt:
   picture: 
   track: yes
   hide_if_away: no
+
+google_maps_104506917447049484567:
+  icon:
+  mac:
+  name: google_maps_104506917447049484567
+  picture: https://lh3.googleusercontent.com/a-/AOh14GjY4fHG3EU8xbeKf9eQhkl7JQP0lbhSPbbPxm_C
+  track: true
+
+google_maps_100084428449204867015:
+  icon:
+  mac:
+  name: google_maps_100084428449204867015
+  picture: https://lh3.googleusercontent.com/a-/AOh14Gjqj1e6mtfnZoimmBW-U75qcaNDM-8KFZ05y-KE
+  track: true
