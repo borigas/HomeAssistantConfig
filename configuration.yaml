@@ -36,6 +36,10 @@ homeassistant:
       friendly_name: Today
     sensor.dark_sky_daily_summary:
       friendly_name: This Week
+    person.ben:
+      entity_picture: https://secure.gravatar.com/avatar/72ad9ece205d095c1684cfd6b1b57508?s=64
+    person.britt:
+      entity_picture: https://lh3.googleusercontent.com/a-/AOh14Gjqj1e6mtfnZoimmBW-U75qcaNDM-8KFZ05y-KE
 
   auth_providers:
     - type: trusted_networks
