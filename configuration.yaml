@@ -10,10 +10,9 @@ homeassistant:
   time_zone: America/Chicago
 
   customize:
-    light.bedroom_ceiling_level:
-      friendly_name: Bedroom Ceiling
+    light.bedroom:
+      friendly_name: Bedroom
       icon: mdi:hotel
-      emulated_hue_name: Bedroom
     switch.kitchen_ceiling_switch:
       friendly_name: Kitchen Ceiling
       icon: mdi:stove
@@ -88,11 +87,6 @@ google_assistant:
     - switch
     - light
     - input_boolean
-  entity_config:
-    light.bedroom_ceiling_level:
-      aliases:
-        Bedroom
-        Bedroom Ceiling
 
 
 device_tracker:
@@ -281,14 +275,16 @@ group:
     name: Lights
     icon: mdi:lightbulb
     entities:
-      - light.bedroom_ceiling_level
+      - light.bedroom
+      - light.guest_bedroom
+      - light.office
       - switch.kitchen_ceiling_switch
       - switch.living_room_switch
   bedroom_alarm_lights:
     name: Bedroom Lights
     icon: mdi:lightbulb
     entities:
-      - light.bedroom_ceiling_level
+      - light.bedroom
   kitchen_lights:
     name: Kitchen Lights
     icon: mdi:lightbulb

@@ -32,7 +32,9 @@ views:
         title: Lights
         show_header_toggle: true
         entities:
-          - light.bedroom_ceiling_level
+          - light.bedroom
+          - light.guest_bedroom
+          - light.office
           - switch.kitchen_ceiling_switch
           - switch.living_room_switch
       - id: cc706ac562ff4344b0efef8f44416e78  # Automatically created id
