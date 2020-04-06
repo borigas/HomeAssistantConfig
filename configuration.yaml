@@ -290,6 +290,13 @@ group:
     icon: mdi:lightbulb
     entities:
       - switch.kitchen_ceiling_switch
+  fans:
+    name: Fans
+    icon: mdi:fan
+    entities:
+      - switch.bedroom_fan
+      - switch.office_fan
+      - switch.guest_bedroom_fan
   speedtest:
     name: Speedtest
     entities:

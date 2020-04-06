@@ -37,6 +37,13 @@ views:
           - light.office
           - switch.kitchen_ceiling_switch
           - switch.living_room_switch
+      - type: entities
+        title: Fans
+        show_header_toggle: true
+        entities:
+          - switch.bedroom_fan
+          - switch.guest_bedroom_fan
+          - switch.office_fan
       - id: cc706ac562ff4344b0efef8f44416e78  # Automatically created id
         type: thermostat
         entity: climate.hallway_nest
