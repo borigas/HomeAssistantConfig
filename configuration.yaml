@@ -170,6 +170,7 @@ discovery:
 # Enables support for tracking state changes over time.
 recorder:
   db_url: mysql://hass:mariapassword@core-mariadb/homeassistant?charset=utf8
+  commit_interval: 60
   include:
     domains:
       - automation
@@ -178,6 +179,7 @@ recorder:
       - switch
       - input_boolean
       - climate
+      - person
     entities:
       - sensor.eastgaragesensor
       - sensor.westgaragesensor
@@ -187,6 +189,8 @@ recorder:
       - sensor.west_garage_uptime
       - device_tracker.ben
       - device_tracker.britt
+      - device_tracker.google_maps_104506917447049484567
+      - device_tracker.google_maps_100084428449204867015
       
 history:
 
