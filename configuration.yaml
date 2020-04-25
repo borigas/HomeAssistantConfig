@@ -340,5 +340,5 @@ group:
   our_devices:
     name: Our Devices
     entities:
-      - device_tracker.ben
-      - device_tracker.britt
+      - person.ben
+      - person.britt
