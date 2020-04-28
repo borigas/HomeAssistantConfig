@@ -39,6 +39,10 @@ homeassistant:
       entity_picture: https://secure.gravatar.com/avatar/72ad9ece205d095c1684cfd6b1b57508?s=64
     person.britt:
       entity_picture: https://lh3.googleusercontent.com/a-/AOh14Gjqj1e6mtfnZoimmBW-U75qcaNDM-8KFZ05y-KE
+    cover.west_garage_door:
+      device_class: garage
+    cover.east_garage_door:
+      device_class: garage
 
   auth_providers:
     - type: trusted_networks
@@ -83,10 +87,12 @@ emulated_hue:
 google_assistant:
   project_id: !secret google_assistant_project_id
   service_account: !include google_service_account.json
+  secure_devices_pin: !secret google_assistant_secure_device_pin
   exposed_domains:
     - switch
     - light
     - input_boolean
+    - cover
 
 
 device_tracker:
@@ -308,13 +314,6 @@ group:
       - sensor.speedtest_upload
       - sensor.speedtest_ping
       - sensor.fastcom_download
-  garage:
-    name: Garage
-    entities:
-      - cover.west_garage_door
-      - cover.east_garage_door
-      - sensor.eastgaragesensor
-      - sensor.westgaragesensor
   Weather Summary:
     entities:
       - sensor.dark_sky_apparent_temperature
