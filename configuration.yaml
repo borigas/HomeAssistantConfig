@@ -92,7 +92,13 @@ google_assistant:
     - switch
     - light
     - input_boolean
-    - cover
+  entity_config:
+    cover.google_assistant_east_garage_door:
+      name: East Garage Door
+      expose: true
+    cover.google_assistant_west_garage_door:
+      name: West Garage Door
+      expose: true
 
 
 device_tracker:
@@ -219,6 +225,103 @@ climate:
 spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
+
+# Proxies traffic to the actual cover, but doesn't allow open and only allows close when current state is open to avoid flipping the relay when closed, accidentally opening
+cover:
+  - platform: template
+    covers:
+      google_assistant_east_garage_door:
+        friendly_name: "Google Assistant East Garage Door"
+        device_class: garage
+        value_template: "{{ states('cover.east_garage_door') }}"
+        availability_template: >-
+          {%- if not is_state("cover.east_garage_door", "unavailable") %}
+            true
+          {%- endif %}
+        close_cover:
+          - service: logbook.log
+            data:
+              name: Google Assistant East Garage Door
+              message: is attempting to close if it's currently open
+              entity_id: cover.google_assistant_east_garage_door
+              domain: cover
+          - condition: state
+            entity_id: cover.east_garage_door
+            state: "open"
+          - service: logbook.log
+            data:
+              name: Google Assistant East Garage Door
+              message: is being closed
+              entity_id: cover.google_assistant_east_garage_door
+              domain: cover
+          - service: cover.close_cover
+            data:
+              entity_id: cover.east_garage_door
+        open_cover:
+          - service: logbook.log
+            data:
+              name: Google Assistant East Garage Door
+              message: is attempting to open if it's currently closed
+              entity_id: cover.google_assistant_east_garage_door
+              domain: cover
+          - condition: state
+            entity_id: cover.east_garage_door
+            state: "closed"
+          - service: logbook.log
+            data:
+              name: Google Assistant East Garage Door
+              message: is being opened
+              entity_id: cover.google_assistant_east_garage_door
+              domain: cover
+          - service: cover.open_cover
+            data:
+              entity_id: cover.east_garage_door
+      google_assistant_west_garage_door:
+        friendly_name: "Google Assistant West Garage Door"
+        device_class: garage
+        value_template: "{{ states('cover.west_garage_door') }}"
+        availability_template: >-
+          {%- if not is_state("cover.west_garage_door", "unavailable") %}
+            true
+          {%- endif %}
+        close_cover:
+          - service: logbook.log
+            data:
+              name: Google Assistant West Garage Door
+              message: is attempting to close if it's currently open
+              entity_id: cover.google_assistant_west_garage_door
+              domain: cover
+          - condition: state
+            entity_id: cover.west_garage_door
+            state: "open"
+          - service: logbook.log
+            data:
+              name: Google Assistant West Garage Door
+              message: is being closed
+              entity_id: cover.google_assistant_west_garage_door
+              domain: cover
+          - service: cover.close_cover
+            data:
+              entity_id: cover.west_garage_door
+        open_cover:
+          - service: logbook.log
+            data:
+              name: Google Assistant West Garage Door
+              message: is attempting to open if it's currently closed
+              entity_id: cover.google_assistant_west_garage_door
+              domain: cover
+          - condition: state
+            entity_id: cover.west_garage_door
+            state: "closed"
+          - service: logbook.log
+            data:
+              name: Google Assistant West Garage Door
+              message: is being opened
+              entity_id: cover.google_assistant_west_garage_door
+              domain: cover
+          - service: cover.open_cover
+            data:
+              entity_id: cover.west_garage_door
 
 input_boolean:
   alarm_lights:
