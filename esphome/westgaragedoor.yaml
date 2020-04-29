@@ -36,15 +36,15 @@ sensor:
     trigger_pin: D3
     echo_pin: D2
     timeout: 10m
-    update_interval: 30s
+    update_interval: 10s
     unit_of_measurement: "ft"
     filters:
       - multiply: 3.28
       #- filter_nan:
       - filter_out: 0
       - sliding_window_moving_average:
-          window_size: 5
-          send_every: 5
+          window_size: 3
+          send_every: 3
       - delta: 1
       - heartbeat: 60s
   - platform: wifi_signal
