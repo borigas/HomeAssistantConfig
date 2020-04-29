@@ -57,6 +57,7 @@ sensor:
 cover:
   - platform: template
     name: "West Garage Door"
+    device_class: garage
     lambda: >-
       if(id(WestGarageSensor).state <= 3.5) {
         return cover::COVER_OPEN;

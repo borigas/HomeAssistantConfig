@@ -56,6 +56,7 @@ sensor:
 
 cover:
   - platform: template
+    device_class: garage
     name: "East Garage Door"
     lambda: >-
       if(id(EastGarageSensor).state <= 3.5) {
