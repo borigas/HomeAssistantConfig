@@ -8,7 +8,7 @@ wifi:
   password: !secret wifi_password
 
   manual_ip:
-    static_ip: 192.168.1.41
+    static_ip: 192.168.1.43
     gateway: 192.168.1.1
     subnet: 255.255.255.0
 
