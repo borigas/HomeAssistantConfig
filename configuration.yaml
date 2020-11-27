@@ -54,6 +54,8 @@ homeassistant:
 
 system_health:
 
+mobile_app:
+
 lovelace:
   mode: yaml
 
