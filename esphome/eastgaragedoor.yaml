@@ -42,7 +42,7 @@ sensor:
       - multiply: 3.28
       - filter_out: 0
       - median:
-          window_size: 9
+          window_size: 15
           send_every: 1
       - or:
         - delta: 0.5
