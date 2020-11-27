@@ -20,12 +20,8 @@ views:
             entities:
               - cover.west_garage_door
               - sensor.westgaragesensor
-              - sensor.west_garage_wifi
-              - sensor.west_garage_uptime
               - cover.east_garage_door
               - sensor.eastgaragesensor
-              - sensor.east_garage_wifi
-              - sensor.east_garage_uptime
 
       - id: 7eb18e16578f45e39ec6fdea945d8fbb  # Automatically created id
         type: entities

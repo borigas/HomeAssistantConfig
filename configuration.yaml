@@ -197,10 +197,6 @@ recorder:
     entities:
       - sensor.eastgaragesensor
       - sensor.westgaragesensor
-      - sensor.east_garage_wifi
-      - sensor.west_garage_wifi
-      - sensor.east_garage_uptime
-      - sensor.west_garage_uptime
       - device_tracker.ben
       - device_tracker.britt
       - device_tracker.google_maps_104506917447049484567
