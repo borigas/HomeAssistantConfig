@@ -185,6 +185,7 @@ discovery:
 recorder:
   db_url: mysql://hass:mariapassword@core-mariadb/homeassistant?charset=utf8
   commit_interval: 60
+  purge_keep_days: 30
   include:
     domains:
       - automation
