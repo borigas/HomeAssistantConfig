@@ -13,7 +13,7 @@ wifi:
     subnet: 255.255.255.0
 
 mqtt:
-  broker: '192.168.1.12'
+  broker: '192.168.1.11'
   username: !secret mqtt_user
   password: !secret mqtt_password
 
