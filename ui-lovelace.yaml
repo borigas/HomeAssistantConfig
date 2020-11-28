@@ -40,6 +40,10 @@ views:
           - switch.bedroom_fan
           - switch.guest_bedroom_fan
           - switch.office_fan
+      - type: entities
+        title: Miscellaneous
+        entities:
+          - switch.hank_electronics_ltd_hkzw_so01_smart_plug_switch
       - id: cc706ac562ff4344b0efef8f44416e78  # Automatically created id
         type: thermostat
         entity: climate.hallway_nest
@@ -168,3 +172,5 @@ views:
           - automation.enable_todays_alarm
           - automation.garage_open
           - automation.no_one_home_lights_off
+          - automation.turn_off_phone_charger
+          - automation.turn_on_phone_charger

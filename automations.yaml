@@ -68,7 +68,7 @@
   alias: Enable todays alarm
   trigger:
     platform: time
-    at: "9:00:00"
+    at: '9:00:00'
   condition:
     condition: state
     entity_id: input_boolean.alarm_lights
@@ -80,7 +80,7 @@
   alias: Disable todays alarm
   trigger:
     platform: time
-    at: "9:00:00"
+    at: '9:00:00'
   condition:
     condition: state
     entity_id: input_boolean.alarm_lights
@@ -166,3 +166,45 @@
     from: home
     platform: state
     to: not_home
+- id: turn_off_phone_charger
+  alias: Turn Off Phone Charger
+  description: Turns off phone charger when it's battery is charged enough
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.oneplus_6t_battery_level
+    above: '80'
+  condition:
+  - type: is_plugged_in
+    condition: device
+    device_id: 9c73ef5fcee94f47ad5ae3b5f1eebe21
+    entity_id: binary_sensor.oneplus_6t_is_charging
+    domain: binary_sensor
+  action:
+  - service: logbook.log
+    data:
+      name: Phone Charging Automatiion
+      message: is turning off the charger to preserve battery health
+      entity_id: switch.hank_electronics_ltd_hkzw_so01_smart_plug_switch
+      domain: switch
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.hank_electronics_ltd_hkzw_so01_smart_plug_switch
+  mode: single
+- id: turn_on_phone_charger
+  alias: Turn On Phone Charger
+  description: Turns on phone charger when it's battery needs to be charged
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.oneplus_6t_battery_level
+    below: '70'
+  action:
+  - service: logbook.log
+    data:
+      name: Phone Charging Automatiion
+      message: is turning on the charger
+      entity_id: switch.hank_electronics_ltd_hkzw_so01_smart_plug_switch
+      domain: switch
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.hank_electronics_ltd_hkzw_so01_smart_plug_switch
+  mode: single
