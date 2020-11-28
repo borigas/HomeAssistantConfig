@@ -160,6 +160,10 @@ views:
           - input_boolean.alarm_lights_today
           - input_number.alarm_hour
           - input_number.alarm_minute
+      - type: entities
+        title: Charging
+        entities:
+          - input_boolean.charger_automations
       - id: a7aca957f15d49358beb5b84f9e3bb9d  # Automatically created id
         type: entities
         title: Automations

@@ -179,6 +179,9 @@
     device_id: 9c73ef5fcee94f47ad5ae3b5f1eebe21
     entity_id: binary_sensor.oneplus_6t_is_charging
     domain: binary_sensor
+  - condition: state
+    entity_id: input_boolean.charger_automations
+    state: 'On'
   action:
   - service: logbook.log
     data:
@@ -197,6 +200,10 @@
   - platform: numeric_state
     entity_id: sensor.oneplus_6t_battery_level
     below: '70'
+  condition:
+  - condition: state
+    entity_id: input_boolean.charger_automations
+    state: 'On'
   action:
   - service: logbook.log
     data:
