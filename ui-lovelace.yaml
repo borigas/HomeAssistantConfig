@@ -87,7 +87,7 @@ views:
       #       line_width: 2
       #       accuracy: 200
       #       hours_to_show: 168
-  - title: puppy
+  - title: Cameras
     cards:
       # - type: picture-entity
       #   entity: camera.puppy_cam_1
@@ -97,19 +97,18 @@ views:
         entity: camera.dining_room
         show_state: false
         camera_view: live
-      - type: picture-entity
-        entity: camera.crate
-        show_state: false
-        camera_view: live
   - id: 1  # Automatically created id
     title: media
     cards:
       - id: 38f9cc35506b4a9bab4ed83a2dcc0fbd  # Automatically created id
         type: vertical-stack
         cards:
+          - type: entities
+            entities:
+              - switch.entertainment_center
           - id: efeba7b68521497a8013fa67086daa6d  # Automatically created id
             type: media-control
-            entity: media_player.center_chromecast
+            entity: media_player.center_tv
           - id: b5c270c15bfd49aeb0ec88a750042c6b  # Automatically created id
             type: media-control
             entity: media_player.surround_chromecast
@@ -119,9 +118,10 @@ views:
           - id: de53a25d62e04801adf0d5c08d83ed56  # Automatically created id
             type: media-control
             entity: media_player.right_chromecast
-          - id: b711bbc1f62a4f388ade240e4133b958  # Automatically created id
-            type: media-control
-            entity: media_player.basement_chromecast
+          - type: media-control
+            entity: media_player.kitchen_chromecast
+          - type: media-control
+            entity: media_player.cart_tv
           - id: 7dd81aef82a047e59bfcef8b3dd8705b  # Automatically created id
             type: media-control
             entity: media_player.spotify

@@ -218,9 +218,6 @@ nest:
   client_id: 0f34338b-5247-45f3-b4a0-a09da4cabba1
   client_secret: !secret nest_secret
 
-climate:
-  platform: nest
-
 spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
@@ -363,7 +360,7 @@ camera:
   #   name: Puppy Cam 1
   - platform: generic
     name: Dining Room
-    stream_source: rtsp://wyzertsp:rtsppass@192.168.1.46/live
+    stream_source: rtsp://wyzertsp:rtsppass@192.168.1.86/live
     still_image_url: https://127.0.0.1/404.png
   - platform: generic
     name: Crate
