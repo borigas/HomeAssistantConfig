@@ -4,6 +4,8 @@ homeassistant:
   # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
+  external_url: !secret base_url
+  internal_url: http://homeassistant.local
   elevation: 400
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -71,7 +73,6 @@ zone:
   icon: mdi:home
 
 http:
-  base_url: !secret base_url
   cors_allowed_origins: !secret base_url
   server_port: 8123
   use_x_forwarded_for: true
@@ -179,7 +180,6 @@ config:
 discovery:
   ignore:
     - netgear_router
-    - igd
 
 # Enables support for tracking state changes over time.
 recorder:
