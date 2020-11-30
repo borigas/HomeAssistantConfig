@@ -181,7 +181,7 @@
     domain: binary_sensor
   - condition: state
     entity_id: input_boolean.charger_automations
-    state: 'On'
+    state: 'on'
   action:
   - service: logbook.log
     data:
@@ -203,7 +203,7 @@
   condition:
   - condition: state
     entity_id: input_boolean.charger_automations
-    state: 'On'
+    state: 'on'
   action:
   - service: logbook.log
     data:
