@@ -1,0 +1,11 @@
+homeassistant:
+    active: true
+    apikey: null
+    groups:
+    - admins
+    password: 3bc45f2c056f99d60574280ebecfed7c6df5169501f2067a1c0b90e22d251dc0566dc7fde152061bfe5dd4fa0737510e85d974676c5d39f7ac8f65faed95bf61
+    permissions: []
+    roles:
+    - user
+    - admin
+    settings: {}
